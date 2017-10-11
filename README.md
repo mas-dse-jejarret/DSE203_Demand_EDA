@@ -3,6 +3,8 @@ Team Horkos' books sales demand prediction repo
 
 to connect to pgadmin in python:
 
+
+```python
 import psycopg2
 import pandas as pd
 
@@ -14,4 +16,4 @@ except:
 
 df = pd.read_sql("select * from calendar", con=conn)
 conn.close()
-df.head()
+df.head()```
