@@ -10,7 +10,7 @@ import pandas as pd
 
 # create a connection to database. make sure that the db name and password are correct
 try:
-    conn = psycopg2.connect("dbname='SQLBook' user='postgres' host='/tmp/' password='Kitty555'")
+    conn = psycopg2.connect("dbname='SQLBook' user='postgres' host='/tmp/' password='YOURPASSWORD'")
 except:
     print "unable to connect to the database"
 
