@@ -1,0 +1,45 @@
+#Run in AQL    
+    
+use dataverse TinySocial;
+
+create type classificationInfoType as open {
+	classification: string,
+	nodeID: int,
+	category: {
+		level_0: string,
+		nested: {
+			level_1: string,
+			nested: {
+				level_2: string,
+				nested: {
+					level_3: string,
+					nested: {
+						level_4: string,
+						nested: {
+							level_5: string,
+							nested: {}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+use dataverse TinySocial;
+drop dataset ClassificationInfo if exists;
+create external dataset ClassificationInfo(classificationInfoType)
+    using localfs
+    (("path"="localhost:///Users/toby/PycharmProjects/clm024/misc/2017FA-DSE203/Data/spreadsheetJSON.json"),
+    ("format"="json"));    
+
+#for the <local dir> don't forget to add the root / (so it should be 3 /// like: path"="localhost:///Users/blah)
+
+    
+    
+#Change to SQL++ on Query Language Selection
+
+USE TinySocial;
+
+    SELECT VALUE user
+    FROM ClassificationInfo user;        

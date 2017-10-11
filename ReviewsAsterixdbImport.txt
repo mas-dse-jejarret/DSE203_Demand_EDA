@@ -1,0 +1,36 @@
+
+#Run in AQL
+
+use dataverse TinySocial;
+drop dataset reviews if exists;
+drop type reviewType if exists;
+
+create type reviewType as open {
+	REVIEWERID: string?,
+	REVIEWERNAME: string?,
+	ASIN: string?,
+	HELPFUL: string?,
+	UNIXREVIEWTIME: string?,
+	REVIEWTEXT: string?,
+	OVERALL: string?,
+	REVIEWTIME: string?,
+	SUMMARY: string?
+}
+
+use dataverse TinySocial;
+drop dataset reviews if exists;
+create external dataset reviews(reviewType)
+    using localfs
+    (("path"="localhost://<local dir>2017FA-DSE203/Data/reviews.json"),
+    ("format"="json"));
+    
+    
+#for the <local dir> don't forget to add the root / (so it should be 3 /// like: path"="localhost:///Users/blah)
+
+
+#Change to SQL++ on Query Language Selection
+
+  USE TinySocial;
+
+    SELECT VALUE user
+    FROM reviews user;
