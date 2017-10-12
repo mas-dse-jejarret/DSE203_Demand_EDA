@@ -18,3 +18,12 @@ df = pd.read_sql("select * from calendar", con=conn)
 conn.close()
 df.head()
 ```
+SQL++
+```sql
+USE TinySocial;
+
+SELECT uid AS uid, ARRAY_COUNT(grp) AS reviewCount
+FROM reviews r
+GROUP BY r.reviewerID AS uid
+GROUP AS grp(r AS msg);
+```
