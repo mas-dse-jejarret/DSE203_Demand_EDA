@@ -46,10 +46,17 @@ pwd: !QAZXSW@1qazxsw2
 
 SET UP A SERVER FROM PGADMIN:
 Launch Pgadmin from local machine.
+
 Right click on Servers, Create and then Server
+
 On General Tab, give a name to your server "cloudpostgres", click on Connection tab and select following settings:
+
 Hostname/Address: 45.79.91.219
+
 Leave everything else default, and Save.
+
 Then You Should be able to see new server added as "cloudpostgres". Click on it to connect. It pops up a window asking password, Just click Ok without anything, coz we have not set any password. 
+
 You should now see Server Connected mesg.
+
 Go to Database MyBookStore which has new tables added.
