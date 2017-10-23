@@ -1,0 +1,7 @@
+# to run 
+python server.py
+
+# to kill
+kill -9 $(pidof python)
+
+
