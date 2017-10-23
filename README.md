@@ -30,13 +30,17 @@ GROUP AS grp(r AS msg);
 
 
 Linux node box: www.linode.com
+
 user: yn2moreno
+
 pwd: rM0fGTBDuF
 
 Launch a console through terminal by copying the lish via SSH command or
 launch a console in the browser through the Glish link
 
 after logging in, log on through shell:
+
 user: root
+
 pwd: !QAZXSW@1qazxsw2
 
