@@ -61,3 +61,28 @@ Hostname/Address: 45.79.91.219
 6. You should now see Server Connected mesg.
 
 7. Go to Database MyBookStore which has new tables added.
+
+# steps to test the api/service
+run ipython
+or create a new notebook
+
+import requests
+
+query = '''
+{
+    "from" : {
+                "v1" : "PG/dbTest/public/table1",
+                "v2" : "AX/AstxDB/TableBT"
+            },
+    "where" : "v1.id = v2.parent_id",
+    "order" : "v1.name",
+    "opts" : {
+                "random" : {}
+             },
+    "return" : "v1.id, v2.parent_id, v1.name, v2.childName"
+}
+'''
+
+res = requests.post('http://45.79.91.219/api/service', json=query)
+if res.ok:
+    print res.text
