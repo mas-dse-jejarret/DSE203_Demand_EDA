@@ -66,6 +66,7 @@ Hostname/Address: 45.79.91.219
 run ipython
 or create a new notebook
 
+```python
 import requests
 
 query = '''
@@ -86,3 +87,4 @@ query = '''
 res = requests.post('http://45.79.91.219/api/service', json=query)
 if res.ok:
     print res.text
+```
