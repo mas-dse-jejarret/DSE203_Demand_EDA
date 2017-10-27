@@ -1,6 +1,10 @@
 from flask import Flask, request, jsonify
 from middleware import WebSession
 from middleware import VirtualIntegrationSchema
+from sqlalchemy import create_engine, text
+from __future__ import print_function
+
+
 import json
 
 
@@ -24,7 +28,26 @@ def api_service():
 
 @app.route("/api/correlation/<col1>/<col2>")
 def correlation(col1, col2):
-    return col1
+
+    engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
+    conn = engine.connect()
+
+    sql = """
+    select corr(o.numunits, p.productid::int)
+    from orderlines o, products p
+    where o.productid = p.productid
+    """
+
+    stmt = text(sql)
+
+    result = conn.execute(stmt)
+
+
+    for row in result:
+        print(row[0])
+    conn.close()
+
+    return row[0]
 
 @app.route("/histogram/<string:name>/")
 def histogram(name):
