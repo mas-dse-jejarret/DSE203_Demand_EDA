@@ -71,10 +71,25 @@ def covariance(col1, col2):
 
     return str(row[0])
 
-@app.route("/histogram/<string:name>/")
-def histogram(name):
-    return name
-
+@app.route("/api/histogram/<groupby>/<count>")
+def histogram(groupby, count):
+	engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
+	conn = engine.connect()
+	
+	sql = """
+	SELECT %s, count(%s)
+	FROM orders
+	Group by %s
+	Order by count(%s) DESC
+	""" %(groupby, count, groupby, count)
+	
+	stmt = text(sql)
+	
+	result = conn.execute(stmt)
+	print(result)
+	conn.close()
+	
+	return result
 
 @app.route('/api/add_message/<uuid>', methods=['GET', 'POST'])
 def add_message(uuid):
