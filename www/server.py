@@ -1,8 +1,9 @@
+from __future__ import print_function
 from flask import Flask, request, jsonify
 from middleware import WebSession
 from middleware import VirtualIntegrationSchema
 from sqlalchemy import create_engine, text
-from __future__ import print_function
+
 
 
 import json
