@@ -112,9 +112,8 @@ def api_web_method(format):
 
     for result in results:
         d = {}
-        for item in [x for x in request.args]:
+        for item in request.args:
             c = request.args[item]
-            print (c)
             d[c] = result[c]
         l.append(d)
     #
