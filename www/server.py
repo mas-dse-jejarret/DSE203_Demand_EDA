@@ -51,25 +51,26 @@ def correlation(col1, col2):
 	
 @app.route("/api/covariance/<col1>/<col2>")
 def covariance(col1, col2):
+	"""Determine the covariance coefficient between two columns."""
+	
+	engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
+	conn = engine.connect()
 
-    engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
-    conn = engine.connect()
+	sql = """
+	select covar_samp(%s::int, %s::int)
+	from orderlines o, products p
+	where o.productid = p.productid
+	""" %(col1, col2)
 
-    sql = """
-    select covar_samp(%s::int, %s::int)
-    from orderlines o, products p
-    where o.productid = p.productid
-    """ %(col1, col2)
+	stmt = text(sql)
 
-    stmt = text(sql)
+	result = conn.execute(stmt)
 
-    result = conn.execute(stmt)
+	for row in result:
+		print(row[0])
+	conn.close()
 
-    for row in result:
-        print(row[0])
-    conn.close()
-
-    return str(row[0])
+	return str(row[0])
 
 @app.route("/api/histogram/<groupby>/<count>")
 def histogram(groupby, count):
