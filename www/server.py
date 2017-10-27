@@ -42,7 +42,6 @@ def correlation(col1, col2):
 
     result = conn.execute(stmt)
 
-
     for row in result:
         print(row[0])
     conn.close()
@@ -56,9 +55,9 @@ def histogram(name):
 
 @app.route('/api/add_message/<uuid>', methods=['GET', 'POST'])
 def add_message(uuid):
-        content = request.get_json(silent=True)
-        print content
-        return jsonify('{"h" : "ok"}')
+    content = request.get_json(silent=True)
+    print (content)
+    return jsonify('{"h" : "ok"}')
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=80)
