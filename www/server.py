@@ -22,6 +22,10 @@ def api_service():
     return jsonify(web_session.get_result_sets(query))
 
 
+@app.route("/api/correlation/<col1>/<col2>")
+def correlation(col1, col2):
+    return col1
+
 @app.route("/histogram/<string:name>/")
 def histogram(name):
     return name
