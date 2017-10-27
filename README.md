@@ -88,3 +88,48 @@ res = requests.post('http://45.79.91.219/api/service', json=query)
 if res.ok:
     print res.text
 ```
+
+## Anatomy of REST API method
+```python
+@app.route("/api/web_method/<format>")
+def api_web_method(format):
+
+    engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
+    conn = engine.connect()
+
+    sql = """
+    select *
+    from orderlines o, products p
+    where o.productid = p.productid
+    LIMIT 10
+    """
+
+    stmt = text(sql)
+
+    results = conn.execute(stmt)
+
+    l = []
+
+    for result in results:
+        d = {}
+        for item in [x for x in request.args]:
+            c = request.args[item]
+            print (c)
+            d[c] = result[c]
+        l.append(d)
+    #
+    theresult_json = json.dumps(l, default=json_serial)
+
+    conn.close()
+
+    return theresult_json
+ ```
+ 
+ ## Sample Client Request of REST API method - localhost could be changed to remote ip address
+
+```python
+import requests
+res = requests.get('http://localhost:80/api/web_method/json?c1=productid&c2=shipdate&c3=unitprice', json=query)
+if res.ok:
+    print res.json()
+```
