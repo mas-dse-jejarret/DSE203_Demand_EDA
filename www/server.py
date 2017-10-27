@@ -47,7 +47,7 @@ def correlation(col1, col2):
         print(row[0])
     conn.close()
 
-    return row[0]
+    return str(row[0])
 
 @app.route("/histogram/<string:name>/")
 def histogram(name):
