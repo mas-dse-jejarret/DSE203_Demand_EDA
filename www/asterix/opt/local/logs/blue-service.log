@@ -1909,3 +1909,2667 @@ Oct 14, 2017 11:12:55 AM org.apache.hyracks.control.nc.Joblet close
 WARNING: Freeing leaked 163840 bytes
 Oct 14, 2017 11:12:55 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionReader$1 run
 INFO: result reading successful(JID:28:RSID:0:0)
+--------------------------
+Tue Oct 24 02:04:47 UTC 2017
+--------------------------
+Oct 24, 2017 2:04:50 AM org.apache.hyracks.control.nc.service.NCService main
+INFO: Waiting for connection from CC on *:9091
+Oct 24, 2017 2:04:54 AM org.apache.hyracks.control.nc.service.NCService configEnvironment
+INFO: Using default JAVA_OPTS
+Oct 24, 2017 2:04:54 AM org.apache.hyracks.control.nc.service.NCService configEnvironment
+INFO: Setting JAVA_OPTS to -Xmx1199m
+Oct 24, 2017 2:04:54 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: Launching NCDriver process
+Oct 24, 2017 2:04:57 AM org.apache.hyracks.control.common.config.ConfigManager parseIni
+INFO: parsing INI file: {nc=[{command=[asterixnc], address=[127.0.0.1], storage.subdir=[storage], cluster.address=[127.0.0.1], cluster.port=[1099]}], common=[{config.file=[/root/DSE203_Demand_EDA/www/asterix/opt/local/conf/cc.conf], log.level=[INFO]}], cc=[{address=[127.0.0.1], app.class=[org.apache.asterix.hyracks.bootstrap.CCApplication]}], nc/blue=[{iodevices=[data/blue], messaging.listen.port=[0], cluster.connect.retries=[5], cluster.public.port=[0], public.address=[127.0.0.1], cluster.listen.port=[0], initial.run=[false], data.listen.port=[0], core.dump.dir=[data/blue/coredump], cluster.listen.address=[127.0.0.1], data.listen.address=[127.0.0.1], storage.memorycomponent.globalbudget=[126713856], storage.buffercache.maxopenfiles=[2147483647], result.manager.memory=[-1], net.thread.count=[1], net.buffer.count=[1], result.ttl=[86400000], storage.memorycomponent.pagesize=[131072], cluster.port=[1099], result.listen.address=[127.0.0.1], txn.log.dir=[data/blue/txnlog], ncservice.pid=[-1], result.public.port=[0], storage.buffercache.pagesize=[131072], messaging.public.port=[0], result.listen.port=[0], ncservice.port=[9091], messaging.public.address=[127.0.0.1], result.sweep.threshold=[60000], storage.memorycomponent.numpages=[60], storage.buffercache.size=[126713856], storage.memorycomponent.numcomponents=[2], messaging.listen.address=[127.0.0.1], storage.metadata.memorycomponent.numpages=[15], virtual.nc=[false], ncservice.address=[127.0.0.1], data.public.port=[0], app.class=[org.apache.asterix.hyracks.bootstrap.NCApplication], result.public.address=[127.0.0.1], cluster.public.address=[127.0.0.1], storage.lsm.bloomfilter.falsepositiverate=[0.01], data.public.address=[127.0.0.1]}], nc/red=[{iodevices=[data/red], messaging.listen.port=[0], cluster.connect.retries=[5], cluster.public.port=[0], public.address=[127.0.0.1], cluster.listen.port=[0], initial.run=[false], data.listen.port=[0], core.dump.dir=[data/red/coredump], cluster.listen.address=[127.0.0.1], data.listen.address=[127.0.0.1], storage.memorycomponent.globalbudget=[126713856], storage.buffercache.maxopenfiles=[2147483647], result.manager.memory=[-1], net.thread.count=[1], net.buffer.count=[1], result.ttl=[86400000], storage.memorycomponent.pagesize=[131072], cluster.port=[1099], result.listen.address=[127.0.0.1], txn.log.dir=[data/red/txnlog], ncservice.pid=[-1], result.public.port=[0], storage.buffercache.pagesize=[131072], messaging.public.port=[0], result.listen.port=[0], ncservice.port=[9090], messaging.public.address=[127.0.0.1], result.sweep.threshold=[60000], storage.memorycomponent.numpages=[60], storage.buffercache.size=[126713856], storage.memorycomponent.numcomponents=[2], messaging.listen.address=[127.0.0.1], storage.metadata.memorycomponent.numpages=[15], virtual.nc=[false], ncservice.address=[127.0.0.1], data.public.port=[0], app.class=[org.apache.asterix.hyracks.bootstrap.NCApplication], result.public.address=[127.0.0.1], cluster.public.address=[127.0.0.1], storage.lsm.bloomfilter.falsepositiverate=[0.01], data.public.address=[127.0.0.1]}], localnc=[{node.id=[blue]}]}
+log4j:WARN No appenders could be found for logger (org.apache.asterix.common.config.PropertiesAccessor).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Oct 24, 2017 2:04:57 AM org.apache.hyracks.control.nc.NCDriver main
+INFO: Setting uncaught exception handler org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 24, 2017 2:04:57 AM org.apache.hyracks.control.nc.NodeControllerService start
+INFO: Starting NodeControllerService
+Oct 24, 2017 2:04:58 AM org.apache.asterix.hyracks.bootstrap.NCApplication start
+INFO: Starting Asterix node controller: blue
+Oct 24, 2017 2:05:00 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 7, offset: 34289
+Oct 24, 2017 2:05:00 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 1879082481
+Oct 24, 2017 2:05:01 AM org.apache.hyracks.control.nc.NodeControllerService start
+INFO: Started NodeControllerService
+Oct 24, 2017 2:05:01 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ApplicationMessage: nodeID: blue
+Oct 24, 2017 2:05:01 AM org.apache.asterix.messaging.NCMessageBroker receivedMessage
+INFO: Received message: org.apache.asterix.app.replication.message.StartupTaskResponseMessage@38654fd3
+Oct 24, 2017 2:05:01 AM org.apache.asterix.app.nc.RecoveryManager startLocalRecovery
+INFO: starting recovery ...
+Oct 24, 2017 2:05:02 AM org.apache.asterix.app.nc.RecoveryManager startRecoverysAnalysisPhase
+INFO: Logs analysis phase completed.
+Oct 24, 2017 2:05:02 AM org.apache.asterix.app.nc.RecoveryManager startRecoverysAnalysisPhase
+INFO: Analysis log count update/entityCommit/jobCommit/abort = 42/0/21/0
+Oct 24, 2017 2:05:02 AM org.apache.asterix.app.nc.RecoveryManager startRecoveryRedoPhase
+INFO: Logs REDO phase completed. Redo logs count: 42
+Oct 24, 2017 2:05:02 AM org.apache.asterix.app.nc.NCAppRuntimeContext initializeMetadata
+INFO: Bootstrapping metadata
+Oct 24, 2017 2:05:03 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startUniverse
+INFO: Finished enlistment of metadata B-trees in old universe
+Oct 24, 2017 2:05:03 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startDDLRecovery
+INFO: Starting DDL recovery ...
+Oct 24, 2017 2:05:03 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startDDLRecovery
+INFO: Completed DDL recovery.
+Oct 24, 2017 2:05:03 AM org.apache.asterix.app.nc.NCAppRuntimeContext initializeMetadata
+INFO: Metadata node bound
+Oct 24, 2017 2:05:03 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Starting sharp checkpoint...
+Oct 24, 2017 2:05:03 AM org.apache.hyracks.storage.am.lsm.common.impls.LSMHarness flush
+INFO: Started a flush operation for index: LSMBTree [/root/DSE203_Demand_EDA/www/asterix/opt/local/data/blue/storage/partition_0/Metadata/Dataset_idx_Dataset/] ...
+Oct 24, 2017 2:05:03 AM org.apache.hyracks.storage.am.lsm.common.impls.LSMHarness flush
+INFO: Finished the flush operation for index: LSMBTree [/root/DSE203_Demand_EDA/www/asterix/opt/local/data/blue/storage/partition_0/Metadata/Dataset_idx_Dataset/]
+Oct 24, 2017 2:05:03 AM org.apache.hyracks.storage.am.lsm.common.impls.LSMHarness flush
+INFO: Started a flush operation for index: LSMBTree [/root/DSE203_Demand_EDA/www/asterix/opt/local/data/blue/storage/partition_0/Metadata/Datatype_idx_Datatype/] ...
+Oct 24, 2017 2:05:03 AM org.apache.hyracks.storage.am.lsm.common.impls.LSMHarness flush
+INFO: Finished the flush operation for index: LSMBTree [/root/DSE203_Demand_EDA/www/asterix/opt/local/data/blue/storage/partition_0/Metadata/Datatype_idx_Datatype/]
+Oct 24, 2017 2:05:03 AM org.apache.hyracks.storage.am.lsm.common.impls.LSMHarness flush
+INFO: Started a flush operation for index: LSMBTree [/root/DSE203_Demand_EDA/www/asterix/opt/local/data/blue/storage/partition_0/Metadata/Index_idx_Index/] ...
+Oct 24, 2017 2:05:03 AM org.apache.hyracks.storage.am.lsm.common.impls.LSMHarness flush
+INFO: Finished the flush operation for index: LSMBTree [/root/DSE203_Demand_EDA/www/asterix/opt/local/data/blue/storage/partition_0/Metadata/Index_idx_Index/]
+Oct 24, 2017 2:05:03 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 24, 2017 2:05:03 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 24, 2017 2:05:03 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: created a log file: data/blue/txnlog/transaction_log_8
+Oct 24, 2017 2:05:03 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 8, offset: 0
+Oct 24, 2017 2:05:03 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 2147483648
+Oct 24, 2017 2:05:03 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Completed sharp checkpoint.
+Oct 24, 2017 2:05:03 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Starting lifecycle components
+Oct 24, 2017 2:05:03 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Coredump directory for NC is: data/blue/coredump
+Oct 24, 2017 2:05:03 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager configure
+INFO: LifecycleComponentManager configured org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 24, 2017 2:05:03 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Configured:org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 24, 2017 2:05:03 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread auditWaitsAndBlocks
+WARNING: Work ApplicationMessage: nodeID: blue waited 17 times (~0ms), blocked 17 times (~0ms)
+Oct 24, 2017 2:21:15 AM org.apache.hyracks.control.nc.task.ShutdownTask run
+INFO: JVM Exiting.. Bye!
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.control.nc.NodeControllerService stop
+INFO: Stopping NodeControllerService
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.control.common.dataset.ResultStateSweeper run
+WARNING: Result cleaner thread interrupted, shutting down.
+Oct 24, 2017 2:21:16 AM org.apache.asterix.hyracks.bootstrap.NCApplication stop
+INFO: Stopping Asterix node controller: blue
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+SEVERE: Attempting to stop org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+SEVERE: Stopping Asterix instance
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.recovery.CheckpointManager dump state false dump path null
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.locking.ConcurrentLockManager dump state false dump path null
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.transaction.TransactionManager dump state false dump path null
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.common.context.DatasetLifecycleManager dump state false dump path null
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.app.nc.RecoveryManager dump state false dump path null
+Oct 24, 2017 2:21:16 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Starting sharp checkpoint...
+Oct 24, 2017 2:21:16 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 24, 2017 2:21:16 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 24, 2017 2:21:16 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: created a log file: data/blue/txnlog/transaction_log_9
+Oct 24, 2017 2:21:16 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 9, offset: 0
+Oct 24, 2017 2:21:16 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 2415919104
+Oct 24, 2017 2:21:16 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Completed sharp checkpoint.
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.logging.LogManager dump state false dump path null
+Oct 24, 2017 2:21:16 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 24, 2017 2:21:16 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.hyracks.storage.common.buffercache.BufferCache dump state false dump path null
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.control.nc.NodeControllerService stop
+INFO: Stopped NodeControllerService
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.control.nc.NCShutdownHook run
+INFO: Shutdown hook in progress
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: NCDriver exited with return value 99
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: Terminating NCService based on return value from NCDriver
+Oct 24, 2017 2:21:16 AM org.apache.hyracks.control.nc.service.NCService exit
+INFO: JVM Exiting.. Bye!
+--------------------------
+Wed Oct 25 03:38:04 UTC 2017
+--------------------------
+Oct 25, 2017 3:38:06 AM org.apache.hyracks.control.nc.service.NCService main
+INFO: Waiting for connection from CC on *:9091
+Oct 25, 2017 3:38:08 AM org.apache.hyracks.control.nc.service.NCService configEnvironment
+INFO: Using default JAVA_OPTS
+Oct 25, 2017 3:38:08 AM org.apache.hyracks.control.nc.service.NCService configEnvironment
+INFO: Setting JAVA_OPTS to -Xmx1199m
+Oct 25, 2017 3:38:08 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: Launching NCDriver process
+Oct 25, 2017 3:38:11 AM org.apache.hyracks.control.common.config.ConfigManager parseIni
+INFO: parsing INI file: {nc=[{command=[asterixnc], address=[127.0.0.1], storage.subdir=[storage], cluster.address=[127.0.0.1], cluster.port=[1099]}], common=[{config.file=[/root/DSE203_Demand_EDA/www/asterix/opt/local/conf/cc.conf], log.level=[INFO]}], cc=[{address=[127.0.0.1], app.class=[org.apache.asterix.hyracks.bootstrap.CCApplication]}], nc/blue=[{iodevices=[data/blue], messaging.listen.port=[0], cluster.connect.retries=[5], cluster.public.port=[0], public.address=[127.0.0.1], cluster.listen.port=[0], initial.run=[false], data.listen.port=[0], core.dump.dir=[data/blue/coredump], cluster.listen.address=[127.0.0.1], data.listen.address=[127.0.0.1], storage.memorycomponent.globalbudget=[126713856], storage.buffercache.maxopenfiles=[2147483647], result.manager.memory=[-1], net.thread.count=[1], net.buffer.count=[1], result.ttl=[86400000], storage.memorycomponent.pagesize=[131072], cluster.port=[1099], result.listen.address=[127.0.0.1], txn.log.dir=[data/blue/txnlog], ncservice.pid=[-1], result.public.port=[0], storage.buffercache.pagesize=[131072], messaging.public.port=[0], result.listen.port=[0], ncservice.port=[9091], messaging.public.address=[127.0.0.1], result.sweep.threshold=[60000], storage.memorycomponent.numpages=[60], storage.buffercache.size=[126713856], storage.memorycomponent.numcomponents=[2], messaging.listen.address=[127.0.0.1], storage.metadata.memorycomponent.numpages=[15], virtual.nc=[false], ncservice.address=[127.0.0.1], data.public.port=[0], app.class=[org.apache.asterix.hyracks.bootstrap.NCApplication], result.public.address=[127.0.0.1], cluster.public.address=[127.0.0.1], storage.lsm.bloomfilter.falsepositiverate=[0.01], data.public.address=[127.0.0.1]}], nc/red=[{iodevices=[data/red], messaging.listen.port=[0], cluster.connect.retries=[5], cluster.public.port=[0], public.address=[127.0.0.1], cluster.listen.port=[0], initial.run=[false], data.listen.port=[0], core.dump.dir=[data/red/coredump], cluster.listen.address=[127.0.0.1], data.listen.address=[127.0.0.1], storage.memorycomponent.globalbudget=[126713856], storage.buffercache.maxopenfiles=[2147483647], result.manager.memory=[-1], net.thread.count=[1], net.buffer.count=[1], result.ttl=[86400000], storage.memorycomponent.pagesize=[131072], cluster.port=[1099], result.listen.address=[127.0.0.1], txn.log.dir=[data/red/txnlog], ncservice.pid=[-1], result.public.port=[0], storage.buffercache.pagesize=[131072], messaging.public.port=[0], result.listen.port=[0], ncservice.port=[9090], messaging.public.address=[127.0.0.1], result.sweep.threshold=[60000], storage.memorycomponent.numpages=[60], storage.buffercache.size=[126713856], storage.memorycomponent.numcomponents=[2], messaging.listen.address=[127.0.0.1], storage.metadata.memorycomponent.numpages=[15], virtual.nc=[false], ncservice.address=[127.0.0.1], data.public.port=[0], app.class=[org.apache.asterix.hyracks.bootstrap.NCApplication], result.public.address=[127.0.0.1], cluster.public.address=[127.0.0.1], storage.lsm.bloomfilter.falsepositiverate=[0.01], data.public.address=[127.0.0.1]}], localnc=[{node.id=[blue]}]}
+log4j:WARN No appenders could be found for logger (org.apache.asterix.common.config.PropertiesAccessor).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Oct 25, 2017 3:38:11 AM org.apache.hyracks.control.nc.NCDriver main
+INFO: Setting uncaught exception handler org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:38:11 AM org.apache.hyracks.control.nc.NodeControllerService start
+INFO: Starting NodeControllerService
+Oct 25, 2017 3:38:11 AM org.apache.asterix.hyracks.bootstrap.NCApplication start
+INFO: Starting Asterix node controller: blue
+Oct 25, 2017 3:38:14 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 9, offset: 0
+Oct 25, 2017 3:38:14 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 2415919104
+Oct 25, 2017 3:38:14 AM org.apache.hyracks.control.nc.NodeControllerService start
+INFO: Started NodeControllerService
+Oct 25, 2017 3:38:15 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ApplicationMessage: nodeID: blue
+Oct 25, 2017 3:38:15 AM org.apache.asterix.messaging.NCMessageBroker receivedMessage
+INFO: Received message: org.apache.asterix.app.replication.message.StartupTaskResponseMessage@433c2904
+Oct 25, 2017 3:38:15 AM org.apache.asterix.app.nc.NCAppRuntimeContext initializeMetadata
+INFO: Bootstrapping metadata
+Oct 25, 2017 3:38:15 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startUniverse
+INFO: Finished enlistment of metadata B-trees in old universe
+Oct 25, 2017 3:38:15 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startDDLRecovery
+INFO: Starting DDL recovery ...
+Oct 25, 2017 3:38:15 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startDDLRecovery
+INFO: Completed DDL recovery.
+Oct 25, 2017 3:38:15 AM org.apache.asterix.app.nc.NCAppRuntimeContext initializeMetadata
+INFO: Metadata node bound
+Oct 25, 2017 3:38:15 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Starting sharp checkpoint...
+Oct 25, 2017 3:38:15 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 25, 2017 3:38:15 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 25, 2017 3:38:15 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: created a log file: data/blue/txnlog/transaction_log_10
+Oct 25, 2017 3:38:15 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 10, offset: 0
+Oct 25, 2017 3:38:15 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 2684354560
+Oct 25, 2017 3:38:15 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Completed sharp checkpoint.
+Oct 25, 2017 3:38:15 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Starting lifecycle components
+Oct 25, 2017 3:38:15 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Coredump directory for NC is: data/blue/coredump
+Oct 25, 2017 3:38:15 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager configure
+INFO: LifecycleComponentManager configured org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:38:15 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Configured:org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:38:16 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread auditWaitsAndBlocks
+WARNING: Work ApplicationMessage: nodeID: blue waited 14 times (~0ms), blocked 14 times (~0ms)
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.control.nc.task.ShutdownTask run
+INFO: JVM Exiting.. Bye!
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.control.nc.NodeControllerService stop
+INFO: Stopping NodeControllerService
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.control.common.dataset.ResultStateSweeper run
+WARNING: Result cleaner thread interrupted, shutting down.
+Oct 25, 2017 3:38:26 AM org.apache.asterix.hyracks.bootstrap.NCApplication stop
+INFO: Stopping Asterix node controller: blue
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+SEVERE: Attempting to stop org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+SEVERE: Stopping Asterix instance
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.recovery.CheckpointManager dump state false dump path null
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.locking.ConcurrentLockManager dump state false dump path null
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.transaction.TransactionManager dump state false dump path null
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.common.context.DatasetLifecycleManager dump state false dump path null
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.app.nc.RecoveryManager dump state false dump path null
+Oct 25, 2017 3:38:26 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Starting sharp checkpoint...
+Oct 25, 2017 3:38:26 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 25, 2017 3:38:26 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 25, 2017 3:38:26 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: created a log file: data/blue/txnlog/transaction_log_11
+Oct 25, 2017 3:38:26 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 11, offset: 0
+Oct 25, 2017 3:38:26 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 2952790016
+Oct 25, 2017 3:38:26 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Completed sharp checkpoint.
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.logging.LogManager dump state false dump path null
+Oct 25, 2017 3:38:26 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 25, 2017 3:38:26 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.hyracks.storage.common.buffercache.BufferCache dump state false dump path null
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.control.nc.NodeControllerService stop
+INFO: Stopped NodeControllerService
+Oct 25, 2017 3:38:26 AM org.apache.hyracks.control.nc.NCShutdownHook run
+INFO: Shutdown hook in progress
+Oct 25, 2017 3:38:27 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: NCDriver exited with return value 99
+Oct 25, 2017 3:38:27 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: Terminating NCService based on return value from NCDriver
+Oct 25, 2017 3:38:27 AM org.apache.hyracks.control.nc.service.NCService exit
+INFO: JVM Exiting.. Bye!
+--------------------------
+Wed Oct 25 03:40:07 UTC 2017
+--------------------------
+Oct 25, 2017 3:40:08 AM org.apache.hyracks.control.nc.service.NCService main
+INFO: Waiting for connection from CC on *:9091
+Oct 25, 2017 3:40:11 AM org.apache.hyracks.control.nc.service.NCService configEnvironment
+INFO: Using default JAVA_OPTS
+Oct 25, 2017 3:40:11 AM org.apache.hyracks.control.nc.service.NCService configEnvironment
+INFO: Setting JAVA_OPTS to -Xmx1199m
+Oct 25, 2017 3:40:11 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: Launching NCDriver process
+Oct 25, 2017 3:40:14 AM org.apache.hyracks.control.common.config.ConfigManager parseIni
+INFO: parsing INI file: {nc=[{command=[asterixnc], address=[127.0.0.1], storage.subdir=[storage], cluster.address=[0.0.0.0], cluster.port=[1099]}], common=[{config.file=[/root/DSE203_Demand_EDA/www/asterix/opt/local/conf/cc.conf], log.level=[INFO]}], cc=[{address=[0.0.0.0], app.class=[org.apache.asterix.hyracks.bootstrap.CCApplication]}], nc/blue=[{iodevices=[data/blue], messaging.listen.port=[0], cluster.connect.retries=[5], cluster.public.port=[0], public.address=[127.0.0.1], cluster.listen.port=[0], initial.run=[false], data.listen.port=[0], core.dump.dir=[data/blue/coredump], cluster.listen.address=[127.0.0.1], data.listen.address=[127.0.0.1], storage.memorycomponent.globalbudget=[126713856], storage.buffercache.maxopenfiles=[2147483647], result.manager.memory=[-1], net.thread.count=[1], net.buffer.count=[1], result.ttl=[86400000], storage.memorycomponent.pagesize=[131072], cluster.port=[1099], result.listen.address=[127.0.0.1], txn.log.dir=[data/blue/txnlog], ncservice.pid=[-1], result.public.port=[0], storage.buffercache.pagesize=[131072], messaging.public.port=[0], result.listen.port=[0], ncservice.port=[9091], messaging.public.address=[127.0.0.1], result.sweep.threshold=[60000], storage.memorycomponent.numpages=[60], storage.buffercache.size=[126713856], storage.memorycomponent.numcomponents=[2], messaging.listen.address=[127.0.0.1], storage.metadata.memorycomponent.numpages=[15], virtual.nc=[false], ncservice.address=[127.0.0.1], data.public.port=[0], app.class=[org.apache.asterix.hyracks.bootstrap.NCApplication], result.public.address=[127.0.0.1], cluster.public.address=[127.0.0.1], storage.lsm.bloomfilter.falsepositiverate=[0.01], data.public.address=[127.0.0.1]}], nc/red=[{iodevices=[data/red], messaging.listen.port=[0], cluster.connect.retries=[5], cluster.public.port=[0], public.address=[127.0.0.1], cluster.listen.port=[0], initial.run=[false], data.listen.port=[0], core.dump.dir=[data/red/coredump], cluster.listen.address=[127.0.0.1], data.listen.address=[127.0.0.1], storage.memorycomponent.globalbudget=[126713856], storage.buffercache.maxopenfiles=[2147483647], result.manager.memory=[-1], net.thread.count=[1], net.buffer.count=[1], result.ttl=[86400000], storage.memorycomponent.pagesize=[131072], cluster.port=[1099], result.listen.address=[127.0.0.1], txn.log.dir=[data/red/txnlog], ncservice.pid=[-1], result.public.port=[0], storage.buffercache.pagesize=[131072], messaging.public.port=[0], result.listen.port=[0], ncservice.port=[9090], messaging.public.address=[127.0.0.1], result.sweep.threshold=[60000], storage.memorycomponent.numpages=[60], storage.buffercache.size=[126713856], storage.memorycomponent.numcomponents=[2], messaging.listen.address=[127.0.0.1], storage.metadata.memorycomponent.numpages=[15], virtual.nc=[false], ncservice.address=[127.0.0.1], data.public.port=[0], app.class=[org.apache.asterix.hyracks.bootstrap.NCApplication], result.public.address=[127.0.0.1], cluster.public.address=[127.0.0.1], storage.lsm.bloomfilter.falsepositiverate=[0.01], data.public.address=[127.0.0.1]}], localnc=[{node.id=[blue]}]}
+log4j:WARN No appenders could be found for logger (org.apache.asterix.common.config.PropertiesAccessor).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Oct 25, 2017 3:40:14 AM org.apache.hyracks.control.nc.NCDriver main
+INFO: Setting uncaught exception handler org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:40:14 AM org.apache.hyracks.control.nc.NodeControllerService start
+INFO: Starting NodeControllerService
+Oct 25, 2017 3:40:14 AM org.apache.asterix.hyracks.bootstrap.NCApplication start
+INFO: Starting Asterix node controller: blue
+Oct 25, 2017 3:40:17 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 11, offset: 0
+Oct 25, 2017 3:40:17 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 2952790016
+Oct 25, 2017 3:40:17 AM org.apache.hyracks.control.nc.NodeControllerService start
+INFO: Started NodeControllerService
+Oct 25, 2017 3:40:17 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ApplicationMessage: nodeID: blue
+Oct 25, 2017 3:40:17 AM org.apache.asterix.messaging.NCMessageBroker receivedMessage
+INFO: Received message: org.apache.asterix.app.replication.message.StartupTaskResponseMessage@433c2904
+Oct 25, 2017 3:40:17 AM org.apache.asterix.app.nc.NCAppRuntimeContext initializeMetadata
+INFO: Bootstrapping metadata
+Oct 25, 2017 3:40:18 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startUniverse
+INFO: Finished enlistment of metadata B-trees in old universe
+Oct 25, 2017 3:40:18 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startDDLRecovery
+INFO: Starting DDL recovery ...
+Oct 25, 2017 3:40:18 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startDDLRecovery
+INFO: Completed DDL recovery.
+Oct 25, 2017 3:40:18 AM org.apache.asterix.app.nc.NCAppRuntimeContext initializeMetadata
+INFO: Metadata node bound
+Oct 25, 2017 3:40:18 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Starting sharp checkpoint...
+Oct 25, 2017 3:40:18 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 25, 2017 3:40:18 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 25, 2017 3:40:18 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: created a log file: data/blue/txnlog/transaction_log_12
+Oct 25, 2017 3:40:18 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 12, offset: 0
+Oct 25, 2017 3:40:18 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 3221225472
+Oct 25, 2017 3:40:18 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Completed sharp checkpoint.
+Oct 25, 2017 3:40:18 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Starting lifecycle components
+Oct 25, 2017 3:40:18 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Coredump directory for NC is: data/blue/coredump
+Oct 25, 2017 3:40:18 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager configure
+INFO: LifecycleComponentManager configured org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:40:18 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Configured:org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:40:18 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread auditWaitsAndBlocks
+WARNING: Work ApplicationMessage: nodeID: blue waited 14 times (~0ms), blocked 14 times (~0ms)
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.control.nc.task.ShutdownTask run
+INFO: JVM Exiting.. Bye!
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.control.nc.NodeControllerService stop
+INFO: Stopping NodeControllerService
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.control.common.dataset.ResultStateSweeper run
+WARNING: Result cleaner thread interrupted, shutting down.
+Oct 25, 2017 3:40:51 AM org.apache.asterix.hyracks.bootstrap.NCApplication stop
+INFO: Stopping Asterix node controller: blue
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+SEVERE: Attempting to stop org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+SEVERE: Stopping Asterix instance
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.recovery.CheckpointManager dump state false dump path null
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.locking.ConcurrentLockManager dump state false dump path null
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.transaction.TransactionManager dump state false dump path null
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.common.context.DatasetLifecycleManager dump state false dump path null
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.app.nc.RecoveryManager dump state false dump path null
+Oct 25, 2017 3:40:51 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Starting sharp checkpoint...
+Oct 25, 2017 3:40:51 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 25, 2017 3:40:51 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 25, 2017 3:40:51 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: created a log file: data/blue/txnlog/transaction_log_13
+Oct 25, 2017 3:40:51 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 13, offset: 0
+Oct 25, 2017 3:40:51 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 3489660928
+Oct 25, 2017 3:40:51 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Completed sharp checkpoint.
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.asterix.transaction.management.service.logging.LogManager dump state false dump path null
+Oct 25, 2017 3:40:51 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 25, 2017 3:40:51 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager stopAll
+INFO: Stopping component instance org.apache.hyracks.storage.common.buffercache.BufferCache dump state false dump path null
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.control.nc.NodeControllerService stop
+INFO: Stopped NodeControllerService
+Oct 25, 2017 3:40:51 AM org.apache.hyracks.control.nc.NCShutdownHook run
+INFO: Shutdown hook in progress
+Oct 25, 2017 3:40:52 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: NCDriver exited with return value 99
+Oct 25, 2017 3:40:52 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: Terminating NCService based on return value from NCDriver
+Oct 25, 2017 3:40:52 AM org.apache.hyracks.control.nc.service.NCService exit
+INFO: JVM Exiting.. Bye!
+--------------------------
+Wed Oct 25 03:41:00 UTC 2017
+--------------------------
+Oct 25, 2017 3:41:01 AM org.apache.hyracks.control.nc.service.NCService main
+INFO: Waiting for connection from CC on *:9091
+Oct 25, 2017 3:41:04 AM org.apache.hyracks.control.nc.service.NCService configEnvironment
+INFO: Using default JAVA_OPTS
+Oct 25, 2017 3:41:04 AM org.apache.hyracks.control.nc.service.NCService configEnvironment
+INFO: Setting JAVA_OPTS to -Xmx1199m
+Oct 25, 2017 3:41:04 AM org.apache.hyracks.control.nc.service.NCService launchNCProcess
+INFO: Launching NCDriver process
+Oct 25, 2017 3:41:06 AM org.apache.hyracks.control.common.config.ConfigManager parseIni
+INFO: parsing INI file: {nc=[{command=[asterixnc], address=[0.0.0.0], storage.subdir=[storage], cluster.address=[0.0.0.0], cluster.port=[1099]}], common=[{config.file=[/root/DSE203_Demand_EDA/www/asterix/opt/local/conf/cc.conf], log.level=[INFO]}], cc=[{address=[0.0.0.0], app.class=[org.apache.asterix.hyracks.bootstrap.CCApplication]}], nc/blue=[{iodevices=[data/blue], messaging.listen.port=[0], cluster.connect.retries=[5], cluster.public.port=[0], public.address=[0.0.0.0], cluster.listen.port=[0], initial.run=[false], data.listen.port=[0], core.dump.dir=[data/blue/coredump], cluster.listen.address=[0.0.0.0], data.listen.address=[0.0.0.0], storage.memorycomponent.globalbudget=[126713856], storage.buffercache.maxopenfiles=[2147483647], result.manager.memory=[-1], net.thread.count=[1], net.buffer.count=[1], result.ttl=[86400000], storage.memorycomponent.pagesize=[131072], cluster.port=[1099], result.listen.address=[0.0.0.0], txn.log.dir=[data/blue/txnlog], ncservice.pid=[-1], result.public.port=[0], storage.buffercache.pagesize=[131072], messaging.public.port=[0], result.listen.port=[0], ncservice.port=[9091], messaging.public.address=[0.0.0.0], result.sweep.threshold=[60000], storage.memorycomponent.numpages=[60], storage.buffercache.size=[126713856], storage.memorycomponent.numcomponents=[2], messaging.listen.address=[0.0.0.0], storage.metadata.memorycomponent.numpages=[15], virtual.nc=[false], ncservice.address=[0.0.0.0], data.public.port=[0], app.class=[org.apache.asterix.hyracks.bootstrap.NCApplication], result.public.address=[0.0.0.0], cluster.public.address=[0.0.0.0], storage.lsm.bloomfilter.falsepositiverate=[0.01], data.public.address=[0.0.0.0]}], nc/red=[{iodevices=[data/red], messaging.listen.port=[0], cluster.connect.retries=[5], cluster.public.port=[0], public.address=[0.0.0.0], cluster.listen.port=[0], initial.run=[false], data.listen.port=[0], core.dump.dir=[data/red/coredump], cluster.listen.address=[0.0.0.0], data.listen.address=[0.0.0.0], storage.memorycomponent.globalbudget=[126713856], storage.buffercache.maxopenfiles=[2147483647], result.manager.memory=[-1], net.thread.count=[1], net.buffer.count=[1], result.ttl=[86400000], storage.memorycomponent.pagesize=[131072], cluster.port=[1099], result.listen.address=[0.0.0.0], txn.log.dir=[data/red/txnlog], ncservice.pid=[-1], result.public.port=[0], storage.buffercache.pagesize=[131072], messaging.public.port=[0], result.listen.port=[0], ncservice.port=[9090], messaging.public.address=[0.0.0.0], result.sweep.threshold=[60000], storage.memorycomponent.numpages=[60], storage.buffercache.size=[126713856], storage.memorycomponent.numcomponents=[2], messaging.listen.address=[0.0.0.0], storage.metadata.memorycomponent.numpages=[15], virtual.nc=[false], ncservice.address=[0.0.0.0], data.public.port=[0], app.class=[org.apache.asterix.hyracks.bootstrap.NCApplication], result.public.address=[0.0.0.0], cluster.public.address=[0.0.0.0], storage.lsm.bloomfilter.falsepositiverate=[0.01], data.public.address=[0.0.0.0]}], localnc=[{node.id=[blue]}]}
+log4j:WARN No appenders could be found for logger (org.apache.asterix.common.config.PropertiesAccessor).
+log4j:WARN Please initialize the log4j system properly.
+log4j:WARN See http://logging.apache.org/log4j/1.2/faq.html#noconfig for more info.
+Oct 25, 2017 3:41:07 AM org.apache.hyracks.control.nc.NCDriver main
+INFO: Setting uncaught exception handler org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:41:07 AM org.apache.hyracks.control.nc.NodeControllerService start
+INFO: Starting NodeControllerService
+Oct 25, 2017 3:41:07 AM org.apache.asterix.hyracks.bootstrap.NCApplication start
+INFO: Starting Asterix node controller: blue
+Oct 25, 2017 3:41:09 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 13, offset: 0
+Oct 25, 2017 3:41:09 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 3489660928
+Oct 25, 2017 3:41:10 AM org.apache.hyracks.control.nc.NodeControllerService start
+INFO: Started NodeControllerService
+Oct 25, 2017 3:41:10 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ApplicationMessage: nodeID: blue
+Oct 25, 2017 3:41:10 AM org.apache.asterix.messaging.NCMessageBroker receivedMessage
+INFO: Received message: org.apache.asterix.app.replication.message.StartupTaskResponseMessage@10a21592
+Oct 25, 2017 3:41:10 AM org.apache.asterix.app.nc.NCAppRuntimeContext initializeMetadata
+INFO: Bootstrapping metadata
+Oct 25, 2017 3:41:10 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startUniverse
+INFO: Finished enlistment of metadata B-trees in old universe
+Oct 25, 2017 3:41:11 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startDDLRecovery
+INFO: Starting DDL recovery ...
+Oct 25, 2017 3:41:11 AM org.apache.asterix.metadata.bootstrap.MetadataBootstrap startDDLRecovery
+INFO: Completed DDL recovery.
+Oct 25, 2017 3:41:11 AM org.apache.asterix.app.nc.NCAppRuntimeContext initializeMetadata
+INFO: Metadata node bound
+Oct 25, 2017 3:41:11 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Starting sharp checkpoint...
+Oct 25, 2017 3:41:11 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: Terminating LogFlusher thread ...
+Oct 25, 2017 3:41:11 AM org.apache.asterix.transaction.management.service.logging.LogManager terminateLogFlusher
+INFO: LogFlusher thread is terminated.
+Oct 25, 2017 3:41:11 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: created a log file: data/blue/txnlog/transaction_log_14
+Oct 25, 2017 3:41:11 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogAnchor
+INFO: log file Id: 14, offset: 0
+Oct 25, 2017 3:41:11 AM org.apache.asterix.transaction.management.service.logging.LogManager initializeLogManager
+INFO: LogManager starts logging in LSN: 3758096384
+Oct 25, 2017 3:41:11 AM org.apache.asterix.transaction.management.service.recovery.CheckpointManager doSharpCheckpoint
+INFO: Completed sharp checkpoint.
+Oct 25, 2017 3:41:11 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Starting lifecycle components
+Oct 25, 2017 3:41:11 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Coredump directory for NC is: data/blue/coredump
+Oct 25, 2017 3:41:11 AM org.apache.hyracks.api.lifecycle.LifeCycleComponentManager configure
+INFO: LifecycleComponentManager configured org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:41:11 AM org.apache.asterix.app.nc.task.StartLifecycleComponentsTask perform
+INFO: Configured:org.apache.hyracks.api.lifecycle.LifeCycleComponentManager@704a52ec
+Oct 25, 2017 3:41:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread auditWaitsAndBlocks
+WARNING: Work ApplicationMessage: nodeID: blue waited 14 times (~0ms), blocked 14 times (~0ms)
+Oct 25, 2017 3:48:57 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 3:48:57 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.storage.am.common.dataflow.TreeIndexCreateOperatorDescriptor@5736cf9]
+Oct 25, 2017 3:48:57 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ApplicationMessage: nodeID: blue
+Oct 25, 2017 3:48:57 AM org.apache.asterix.messaging.NCMessageBroker receivedMessage
+INFO: Received message: ResourceIdRequestResponseMessage
+Oct 25, 2017 3:48:57 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 3:48:57 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 3:48:57 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:0
+Oct 25, 2017 3:57:36 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 3:57:36 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.file.FileRemoveOperatorDescriptor@2a1d7d84]
+Oct 25, 2017 3:57:36 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 3:57:36 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 3:57:36 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:1
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.storage.am.common.dataflow.TreeIndexCreateOperatorDescriptor@4c89610e]
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ApplicationMessage: nodeID: blue
+Oct 25, 2017 3:57:37 AM org.apache.asterix.messaging.NCMessageBroker receivedMessage
+INFO: Received message: ResourceIdRequestResponseMessage
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:2
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.asterix.common.dataflow.LSMTreeInsertDeleteOperatorDescriptor@2ae58c61, Asterix { 
+  stream-project [1];
+  commit;
+}]
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [Asterix { 
+  ets;
+  assign [0] := [Constant];
+  unnest 1 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@7cc0cfd2;
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.CastTypeDescriptor$_EvaluatorFactoryGen@83119f];
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@61a91573];
+}]
+Oct 25, 2017 3:57:37 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+org.apache.hyracks.api.exceptions.HyracksDataException: java.util.concurrent.ExecutionException: org.apache.hyracks.api.exceptions.HyracksDataException: HYR0002: Error in processing tuple 0 in a frame
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.runInParallel(SuperActivityOperatorNodePushable.java:228)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.initialize(SuperActivityOperatorNodePushable.java:84)
+	at org.apache.hyracks.control.nc.Task.run(Task.java:273)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.ExecutionException: org.apache.hyracks.api.exceptions.HyracksDataException: HYR0002: Error in processing tuple 0 in a frame
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.runInParallel(SuperActivityOperatorNodePushable.java:222)
+	... 5 more
+Caused by: org.apache.hyracks.api.exceptions.HyracksDataException: HYR0002: Error in processing tuple 0 in a frame
+	at org.apache.hyracks.api.exceptions.HyracksDataException.create(HyracksDataException.java:45)
+	at org.apache.hyracks.algebricks.runtime.operators.std.AssignRuntimeFactory$1.produceTuple(AssignRuntimeFactory.java:175)
+	at org.apache.hyracks.algebricks.runtime.operators.std.AssignRuntimeFactory$1.nextFrame(AssignRuntimeFactory.java:137)
+	at org.apache.hyracks.dataflow.common.comm.io.AbstractFrameAppender.write(AbstractFrameAppender.java:92)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.flushAndReset(AbstractOneInputOneOutputOneFramePushRuntime.java:66)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.appendProjectionToFrame(AbstractOneInputOneOutputOneFramePushRuntime.java:100)
+	at org.apache.hyracks.algebricks.runtime.operators.std.StreamProjectRuntimeFactory$1.nextFrame(StreamProjectRuntimeFactory.java:80)
+	at org.apache.hyracks.dataflow.common.comm.io.AbstractFrameAppender.write(AbstractFrameAppender.java:92)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.flushAndReset(AbstractOneInputOneOutputOneFramePushRuntime.java:66)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.flushIfNotFailed(AbstractOneInputOneOutputOneFramePushRuntime.java:72)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.close(AbstractOneInputOneOutputOneFramePushRuntime.java:55)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.close(AbstractOneInputOneOutputOneFramePushRuntime.java:60)
+	at org.apache.hyracks.algebricks.runtime.operators.std.AssignRuntimeFactory$1.close(AssignRuntimeFactory.java:119)
+	at org.apache.hyracks.algebricks.runtime.operators.std.EmptyTupleSourceRuntimeFactory$1.close(EmptyTupleSourceRuntimeFactory.java:60)
+	at org.apache.hyracks.algebricks.runtime.operators.meta.AlgebricksMetaOperatorDescriptor$1.initialize(AlgebricksMetaOperatorDescriptor.java:106)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.lambda$initialize$0(SuperActivityOperatorNodePushable.java:86)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.lambda$runInParallel$2(SuperActivityOperatorNodePushable.java:216)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	... 3 more
+Caused by: org.apache.hyracks.api.exceptions.HyracksDataException: org.apache.asterix.common.exceptions.AsterixException: type mismatch: missing a required closed field childName:string
+	at org.apache.asterix.runtime.evaluators.functions.CastTypeEvaluator$_EvaluatorGen.evaluate(CastTypeDescriptor.java:131)
+	at org.apache.hyracks.algebricks.runtime.operators.std.AssignRuntimeFactory$1.produceTuple(AssignRuntimeFactory.java:168)
+	... 19 more
+Caused by: org.apache.asterix.common.exceptions.AsterixException: type mismatch: missing a required closed field childName:string
+	at org.apache.asterix.om.pointables.cast.ACastVisitor.visit(ACastVisitor.java:93)
+	at org.apache.asterix.om.pointables.cast.ACastVisitor.visit(ACastVisitor.java:53)
+	at org.apache.asterix.om.pointables.ARecordVisitablePointable.accept(ARecordVisitablePointable.java:299)
+	at org.apache.asterix.runtime.evaluators.functions.CastTypeEvaluator$_EvaluatorGen.evaluate(CastTypeDescriptor.java:128)
+	... 20 more
+Caused by: java.lang.IllegalStateException: type mismatch: missing a required closed field childName:string
+	at org.apache.asterix.om.pointables.cast.ARecordCaster.matchClosedPart(ARecordCaster.java:284)
+	at org.apache.asterix.om.pointables.cast.ARecordCaster.castRecord(ARecordCaster.java:134)
+	at org.apache.asterix.om.pointables.cast.ACastVisitor.visit(ACastVisitor.java:91)
+	... 23 more
+Oct 25, 2017 3:57:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskFailure
+Oct 25, 2017 3:57:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 3:57:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: AbortTasks
+Oct 25, 2017 3:57:38 AM org.apache.hyracks.control.nc.work.AbortTasksWork run
+INFO: Aborting Tasks: JID:3:[TAID:TID:ANID:ODID:0:0:0:0]
+Oct 25, 2017 3:57:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 3:57:38 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:3
+Oct 25, 2017 3:57:38 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: rollbacking transaction log records from 3758105417 to 3758105417
+Oct 25, 2017 3:57:38 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: collecting loser transaction's LSNs from 3758105417 to 3758105417
+Oct 25, 2017 3:57:38 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: undoing loser transaction's effect
+Oct 25, 2017 3:57:38 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: undone loser transaction's effect
+Oct 25, 2017 3:57:38 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: [RecoveryManager's rollback log count] update/entityCommit/undo:0/0/0
+Oct 25, 2017 3:57:38 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 25, 2017 3:57:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread auditWaitsAndBlocks
+WARNING: Work CleanupJoblet waited 1 times (~0ms), blocked 1 times (~0ms)
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.storage.am.common.dataflow.IndexDropOperatorDescriptor@3c90d563]
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:4
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.file.FileRemoveOperatorDescriptor@14e140b3]
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:5
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.storage.am.common.dataflow.TreeIndexCreateOperatorDescriptor@2ee0b481]
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ApplicationMessage: nodeID: blue
+Oct 25, 2017 3:58:05 AM org.apache.asterix.messaging.NCMessageBroker receivedMessage
+INFO: Received message: ResourceIdRequestResponseMessage
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 3:58:05 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:6
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.asterix.common.dataflow.LSMTreeInsertDeleteOperatorDescriptor@398db423, Asterix { 
+  stream-project [1];
+  commit;
+}]
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [Asterix { 
+  ets;
+  assign [0] := [Constant];
+  unnest 1 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@6dcaad6d;
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.CastTypeDescriptor$_EvaluatorFactoryGen@73308cbf];
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@585f6ae4];
+}]
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+org.apache.hyracks.api.exceptions.HyracksDataException: java.util.concurrent.ExecutionException: org.apache.hyracks.api.exceptions.HyracksDataException: HYR0002: Error in processing tuple 0 in a frame
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.runInParallel(SuperActivityOperatorNodePushable.java:228)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.initialize(SuperActivityOperatorNodePushable.java:84)
+	at org.apache.hyracks.control.nc.Task.run(Task.java:273)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.util.concurrent.ExecutionException: org.apache.hyracks.api.exceptions.HyracksDataException: HYR0002: Error in processing tuple 0 in a frame
+	at java.util.concurrent.FutureTask.report(FutureTask.java:122)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:192)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.runInParallel(SuperActivityOperatorNodePushable.java:222)
+	... 5 more
+Caused by: org.apache.hyracks.api.exceptions.HyracksDataException: HYR0002: Error in processing tuple 0 in a frame
+	at org.apache.hyracks.api.exceptions.HyracksDataException.create(HyracksDataException.java:45)
+	at org.apache.hyracks.algebricks.runtime.operators.std.AssignRuntimeFactory$1.produceTuple(AssignRuntimeFactory.java:175)
+	at org.apache.hyracks.algebricks.runtime.operators.std.AssignRuntimeFactory$1.nextFrame(AssignRuntimeFactory.java:137)
+	at org.apache.hyracks.dataflow.common.comm.io.AbstractFrameAppender.write(AbstractFrameAppender.java:92)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.flushAndReset(AbstractOneInputOneOutputOneFramePushRuntime.java:66)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.appendProjectionToFrame(AbstractOneInputOneOutputOneFramePushRuntime.java:100)
+	at org.apache.hyracks.algebricks.runtime.operators.std.StreamProjectRuntimeFactory$1.nextFrame(StreamProjectRuntimeFactory.java:80)
+	at org.apache.hyracks.dataflow.common.comm.io.AbstractFrameAppender.write(AbstractFrameAppender.java:92)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.flushAndReset(AbstractOneInputOneOutputOneFramePushRuntime.java:66)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.flushIfNotFailed(AbstractOneInputOneOutputOneFramePushRuntime.java:72)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.close(AbstractOneInputOneOutputOneFramePushRuntime.java:55)
+	at org.apache.hyracks.algebricks.runtime.operators.base.AbstractOneInputOneOutputOneFramePushRuntime.close(AbstractOneInputOneOutputOneFramePushRuntime.java:60)
+	at org.apache.hyracks.algebricks.runtime.operators.std.AssignRuntimeFactory$1.close(AssignRuntimeFactory.java:119)
+	at org.apache.hyracks.algebricks.runtime.operators.std.EmptyTupleSourceRuntimeFactory$1.close(EmptyTupleSourceRuntimeFactory.java:60)
+	at org.apache.hyracks.algebricks.runtime.operators.meta.AlgebricksMetaOperatorDescriptor$1.initialize(AlgebricksMetaOperatorDescriptor.java:106)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.lambda$initialize$0(SuperActivityOperatorNodePushable.java:86)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.lambda$runInParallel$2(SuperActivityOperatorNodePushable.java:216)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	... 3 more
+Caused by: org.apache.hyracks.api.exceptions.HyracksDataException: org.apache.asterix.common.exceptions.AsterixException: type mismatch: missing a required closed field childName:string
+	at org.apache.asterix.runtime.evaluators.functions.CastTypeEvaluator$_EvaluatorGen.evaluate(CastTypeDescriptor.java:131)
+	at org.apache.hyracks.algebricks.runtime.operators.std.AssignRuntimeFactory$1.produceTuple(AssignRuntimeFactory.java:168)
+	... 19 more
+Caused by: org.apache.asterix.common.exceptions.AsterixException: type mismatch: missing a required closed field childName:string
+	at org.apache.asterix.om.pointables.cast.ACastVisitor.visit(ACastVisitor.java:93)
+	at org.apache.asterix.om.pointables.cast.ACastVisitor.visit(ACastVisitor.java:53)
+	at org.apache.asterix.om.pointables.ARecordVisitablePointable.accept(ARecordVisitablePointable.java:299)
+	at org.apache.asterix.runtime.evaluators.functions.CastTypeEvaluator$_EvaluatorGen.evaluate(CastTypeDescriptor.java:128)
+	... 20 more
+Caused by: java.lang.IllegalStateException: type mismatch: missing a required closed field childName:string
+	at org.apache.asterix.om.pointables.cast.ARecordCaster.matchClosedPart(ARecordCaster.java:284)
+	at org.apache.asterix.om.pointables.cast.ARecordCaster.castRecord(ARecordCaster.java:134)
+	at org.apache.asterix.om.pointables.cast.ACastVisitor.visit(ACastVisitor.java:91)
+	... 23 more
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskFailure
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: AbortTasks
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.nc.work.AbortTasksWork run
+INFO: Aborting Tasks: JID:7:[TAID:TID:ANID:ODID:0:0:0:0]
+org.apache.hyracks.api.exceptions.HyracksDataException: java.lang.InterruptedException
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.runInParallel(SuperActivityOperatorNodePushable.java:228)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.deinitialize(SuperActivityOperatorNodePushable.java:165)
+	at org.apache.hyracks.control.nc.Task.run(Task.java:314)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.InterruptedException
+	at java.util.concurrent.FutureTask.awaitDone(FutureTask.java:404)
+	at java.util.concurrent.FutureTask.get(FutureTask.java:191)
+	at org.apache.hyracks.api.rewriter.runtime.SuperActivityOperatorNodePushable.runInParallel(SuperActivityOperatorNodePushable.java:222)
+	... 5 more
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:7
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskFailure
+Oct 25, 2017 3:58:23 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: rollbacking transaction log records from 3758112007 to 3758112007
+Oct 25, 2017 3:58:23 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: collecting loser transaction's LSNs from 3758112007 to 3758112007
+Oct 25, 2017 3:58:23 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: undoing loser transaction's effect
+Oct 25, 2017 3:58:23 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: undone loser transaction's effect
+Oct 25, 2017 3:58:23 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: [RecoveryManager's rollback log count] update/entityCommit/undo:0/0/0
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 25, 2017 3:58:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread auditWaitsAndBlocks
+WARNING: Work NotifyTaskFailure waited 1 times (~0ms), blocked 1 times (~0ms)
+Oct 25, 2017 4:00:26 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:00:26 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.asterix.common.dataflow.LSMTreeInsertDeleteOperatorDescriptor@ca7f160, Asterix { 
+  stream-project [1];
+  commit;
+}]
+Oct 25, 2017 4:00:26 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 4:00:26 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:00:26 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:00:26 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:8
+Oct 25, 2017 4:00:26 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: rollbacking transaction log records from 3758112021 to 3758112021
+Oct 25, 2017 4:00:26 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: collecting loser transaction's LSNs from 3758112021 to 3758112021
+Oct 25, 2017 4:00:26 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: undoing loser transaction's effect
+Oct 25, 2017 4:00:26 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: undone loser transaction's effect
+Oct 25, 2017 4:00:26 AM org.apache.asterix.app.nc.RecoveryManager rollbackTransaction
+INFO: [RecoveryManager's rollback log count] update/entityCommit/undo:0/0/0
+Oct 25, 2017 4:00:26 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 98304 bytes
+Oct 25, 2017 4:00:26 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread auditWaitsAndBlocks
+WARNING: Work CleanupJoblet waited 1 times (~0ms), blocked 1 times (~0ms)
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.asterix.common.dataflow.LSMTreeInsertDeleteOperatorDescriptor@439ca300, Asterix { 
+  stream-project [1];
+  commit;
+}]
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [Asterix { 
+  ets;
+  assign [0] := [Constant];
+  unnest 1 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@60b7f9dd;
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.CastTypeDescriptor$_EvaluatorFactoryGen@53a8385a];
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@13f44a07];
+}]
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:9
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 360448 bytes
+Oct 25, 2017 4:01:20 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread auditWaitsAndBlocks
+WARNING: Work CleanupJoblet waited 1 times (~0ms), blocked 1 times (~0ms)
+Oct 25, 2017 4:06:10 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:06:10 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@596c46b8, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@737357dc, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+}]
+Oct 25, 2017 4:06:10 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 4:06:10 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 4:06:10 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:06:10 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:06:10 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:10
+Oct 25, 2017 4:06:10 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 131072 bytes
+Oct 25, 2017 4:07:03 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:07:03 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@7b9c39a9, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@4439d135, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  stream-select org.apache.asterix.runtime.evaluators.comparisons.EqualsDescriptor$_EvaluatorFactoryGen@3ffb8e38;
+}]
+Oct 25, 2017 4:07:03 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 4:07:03 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 4:07:03 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:07:03 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:07:03 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:11
+Oct 25, 2017 4:07:03 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 163840 bytes
+Oct 25, 2017 4:07:13 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:07:13 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@abcf02d, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@1077c1a2, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+}]
+Oct 25, 2017 4:07:13 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 4:07:13 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 4:07:13 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:07:13 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:07:13 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:12
+Oct 25, 2017 4:07:13 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 131072 bytes
+Oct 25, 2017 4:07:33 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:07:33 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@1a4d0ae0, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@7924dddf, Asterix { 
+  stream-project [1];
+}, Asterix { 
+  ets;
+}]
+Oct 25, 2017 4:07:33 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 4:07:33 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 4:07:33 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:07:33 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:07:33 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:13
+Oct 25, 2017 4:07:33 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 131072 bytes
+Oct 25, 2017 4:09:52 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:09:52 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@1474774e, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@3aa0deb3, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+}]
+Oct 25, 2017 4:09:52 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 4:09:52 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 4:09:52 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:09:52 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:09:52 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:14
+Oct 25, 2017 4:09:52 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 131072 bytes
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@4bbf2ea2]
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@aa768b0, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@69db2eb6, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@7a28b6e8, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@6aec1c96];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [0];
+}]
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:15
+Oct 25, 2017 4:10:34 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 458752 bytes
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@7dc301dc]
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@1f86e9f8, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@41fcba4a, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@6eeb73, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@6546c743];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [0];
+}]
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:16
+Oct 25, 2017 4:10:55 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 491520 bytes
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@39ca9123]
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@3fd08ca2;
+}]
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:3
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@7cfddda7, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@47f3fb06, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@3cf54707, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@35861783];
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@2704f471];
+  stream-project [1];
+}]
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:17
+Oct 25, 2017 4:11:08 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 622592 bytes
+Oct 25, 2017 5:47:51 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 5:47:51 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@60e66716, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@1b6a6d44, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@36f9d2c0];
+  stream-project [1];
+}]
+Oct 25, 2017 5:47:51 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 5:47:51 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 5:47:51 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 5:47:51 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 5:47:51 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:18
+Oct 25, 2017 5:47:51 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 196608 bytes
+Oct 25, 2017 7:54:43 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@33e65428]
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:2
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@3621c298;
+}]
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:2
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@5368e039, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@43de4cd, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@3cb0c3d0, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@1b7309af];
+  stream-project [1];
+}]
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:19
+Oct 25, 2017 7:54:44 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 589824 bytes
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@f8e5bd0]
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:2
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@64fecd60;
+}]
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:2
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:5:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@5eea2c6c, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@5dd7786f, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@20fae8de, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@32fda46c];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}]
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:20
+Oct 25, 2017 7:55:38 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 589824 bytes
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@3dfb6713]
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:2
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:5:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@5b8964c3, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@2c42db74, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@7343d454, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@15e6e6d0];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}]
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:21
+Oct 25, 2017 7:55:43 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 524288 bytes
+Oct 25, 2017 7:55:51 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 7:55:51 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@5d937d3, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@3ffac567, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@527657b8];
+  stream-project [1];
+}]
+Oct 25, 2017 7:55:51 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 7:55:51 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 7:55:51 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:55:51 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 7:55:51 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:22
+Oct 25, 2017 7:55:51 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 196608 bytes
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@2030fbae]
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@4423273a, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@63e9599b, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@d935bc1, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@5e66bccb];
+  stream-project [1];
+}]
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:23
+Oct 25, 2017 7:56:13 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@3df7e573]
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@5f6271e1;
+}]
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@18a15e36, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@2a387056, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@6619f189, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@3e025e9];
+  stream-project [1];
+}]
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:24
+Oct 25, 2017 8:12:17 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@11228b4d]
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@78f1f3ff;
+}]
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@51cdd0d1, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@5380686c, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@56fdf9b2, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@21649699];
+  stream-project [1];
+}]
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:25
+Oct 25, 2017 8:13:08 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@1e90913c]
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@778a0991;
+}]
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@685cffb1, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@3cc72439, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@1ba674b1, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@153ac4c3];
+  stream-project [1];
+}]
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:26
+Oct 25, 2017 8:14:17 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@1a9400a2]
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@37dce596, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@74832372, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@4e28ac50, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@69b1aa81];
+  stream-project [1];
+}]
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:27
+Oct 25, 2017 8:15:58 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@39911274]
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@5f255277;
+}]
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@a17a902, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@7ff22ec1, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@a316da2, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@117bb3ca];
+  stream-project [1];
+}]
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:28
+Oct 25, 2017 8:17:04 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@3392250e]
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@5a058f38, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@6ebbbd6a, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@4ca35fe6, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@3cf4140];
+  stream-project [1];
+}]
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:29
+Oct 26, 2017 12:45:11 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 4:43:22 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@3944bc93]
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@6fe8e7bc;
+}]
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@a83bcf6, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@62161092, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@4a6bde6b, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@256f36aa];
+  stream-project [1];
+}]
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:30
+Oct 26, 2017 4:43:23 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@321c4afd]
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@74504c5a, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@2856ee1c, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@784d0249, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@7ae68ac2];
+  stream-project [1];
+}]
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:31
+Oct 26, 2017 4:46:40 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 4:47:14 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@ca22b58]
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@131b02de, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@35405be, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@4daa3f8c, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@504f358a];
+  stream-project [1];
+}]
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:32
+Oct 26, 2017 4:47:15 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@1b09d0af]
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@2499515c;
+}]
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@588ae69d, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@7a87a56e, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@147a08d3, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@72383af];
+  stream-project [1];
+}]
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:33
+Oct 26, 2017 4:54:38 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@89223d8]
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@4f794b71, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@b01fedd, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@10a42ae9, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@93147c6];
+  stream-project [1];
+}]
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:34
+Oct 26, 2017 4:54:42 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 4:55:18 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:55:18 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@c16a752]
+Oct 26, 2017 4:55:18 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 4:55:18 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 4:55:18 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:55:19 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:55:19 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@865471b, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@39a7c79c, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@3a2ba819, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@3beb439];
+  stream-project [1];
+}]
+Oct 26, 2017 4:55:19 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 4:55:19 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 4:55:19 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:55:19 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 4:55:19 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:35
+Oct 26, 2017 4:55:19 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@214166ca]
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@4151c1eb, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@3738ba84, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@1d65ed9f, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@5582477c];
+  stream-project [1];
+}]
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:36
+Oct 26, 2017 4:57:03 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@1a939abe]
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@5ab6fe79, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@1dc8ebf4, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@1b88d499, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@1cfd5a75];
+  stream-project [1];
+}]
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:37
+Oct 26, 2017 5:00:39 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@71552aa5]
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@2b18e830, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@76e9ddd6, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@311f8c, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@58691d2d];
+  stream-project [1];
+}]
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:38
+Oct 26, 2017 5:01:19 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@34dc2778]
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@c635b58, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@426e827, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@14b60dfb, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@41041ff2];
+  stream-project [1];
+}]
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:39
+Oct 26, 2017 5:02:18 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@57ab2511]
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@647f8813, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@408288b2, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@2198f4df, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@2f95ce50];
+  stream-project [1];
+}]
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:40
+Oct 26, 2017 5:03:07 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@3732e4a1]
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@5f9034a, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@49fbaeb, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@24a84135, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@4e8cce08];
+  stream-project [1];
+}]
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:41
+Oct 26, 2017 5:04:37 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@32267c0]
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@7a93ddad;
+}]
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@1c549a23, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@3400eb2f, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@248c8608, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@40164981];
+  stream-project [1];
+}]
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:42
+Oct 26, 2017 5:05:28 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@782b5622]
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@b3df02d;
+}]
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@5bad39cc, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@1c373469, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@78ef135a, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@2e787767];
+  stream-project [1];
+}]
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:43
+Oct 26, 2017 5:06:28 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@1ca9483d]
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@39ed0217;
+}]
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@2fddb07, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@7e0485be, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@2fa8ddd3, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@67ebdabd];
+  stream-project [1];
+}]
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:44
+Oct 26, 2017 5:13:09 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@51d15d0b]
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@1794f27, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@1a45c89c, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@41a7f7da, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@b365825];
+  stream-project [1];
+}]
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:45
+Oct 26, 2017 5:26:51 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@5c0440ac]
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:6:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@694990e7;
+}]
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:3
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@641559b6, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@dc293ff, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@28a9f408, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@615193a9];
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@2f47bedc];
+  stream-project [1];
+}]
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:46
+Oct 26, 2017 5:29:12 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 622592 bytes
+Oct 26, 2017 5:31:40 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:31:40 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@36038da0]
+Oct 26, 2017 5:31:40 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 5:31:41 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:31:41 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 5:31:41 AM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@3c4c3b93, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@2eefc398, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@4ab3568, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@3c48a8f7];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@61059c4e];
+}]
+Oct 26, 2017 5:31:41 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 5:31:41 AM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 5:31:41 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 5:31:41 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 5:31:41 AM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:47
+Oct 26, 2017 5:31:41 AM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 557056 bytes
+Oct 26, 2017 9:15:56 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:15:56 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@47bcff12, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@6560b534, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  stream-select org.apache.asterix.runtime.evaluators.comparisons.EqualsDescriptor$_EvaluatorFactoryGen@5fec45d4;
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@33e33cfb];
+  stream-project [1];
+}]
+Oct 26, 2017 9:15:56 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:15:56 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:15:56 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:15:56 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:15:56 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:48
+Oct 26, 2017 9:15:56 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 9:16:25 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:16:25 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@4e51f6ff, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@64ff1f2a, Asterix { 
+  stream-project [1];
+  stream-select org.apache.asterix.runtime.evaluators.comparisons.EqualsDescriptor$_EvaluatorFactoryGen@4fdcda9e;
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@4a8a97d9];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}]
+Oct 26, 2017 9:16:25 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:16:25 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:16:25 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:16:25 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:16:25 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:49
+Oct 26, 2017 9:16:25 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 9:19:40 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:19:40 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@bad6679, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@17b72e69, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  stream-select org.apache.asterix.runtime.evaluators.comparisons.EqualsDescriptor$_EvaluatorFactoryGen@3e960e2b;
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@203c627f];
+  stream-project [1];
+}]
+Oct 26, 2017 9:19:40 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:19:40 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:19:40 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:19:40 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:19:40 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:50
+Oct 26, 2017 9:19:40 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 9:20:42 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:20:42 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@6ea8fcb8, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@60c14010, Asterix { 
+  stream-project [1];
+  stream-select org.apache.asterix.runtime.evaluators.comparisons.EqualsDescriptor$_EvaluatorFactoryGen@23ade9ed;
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@71883409];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}]
+Oct 26, 2017 9:20:42 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:20:42 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:20:42 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:20:42 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:20:42 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:51
+Oct 26, 2017 9:20:42 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 9:22:21 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:22:21 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@32c74171, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@7ee93445, Asterix { 
+  stream-project [1];
+  stream-select org.apache.asterix.runtime.evaluators.comparisons.EqualsDescriptor$_EvaluatorFactoryGen@4ef16fed;
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@747a7c24];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}]
+Oct 26, 2017 9:22:21 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:22:21 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:22:21 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:22:21 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:22:21 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:52
+Oct 26, 2017 9:22:21 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 9:26:04 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@1d9bbac9]
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@7f2a587e, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@51c675a9, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@11cbc0aa, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@2ece9a3];
+  stream-project [1];
+}]
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:53
+Oct 26, 2017 9:26:05 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:0:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$1@2fa8b828]
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:0
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@4da1eb49;
+}]
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:0
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.dataflow.std.sort.AbstractSorterOperatorDescriptor$SortActivity$1 close
+INFO: InitialNumberOfRuns:0
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:0:1:0:0 -> [org.apache.hyracks.dataflow.std.sort.ExternalSortOperatorDescriptor$2@220bcc7, org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@6764ecd1, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@d6761ed, Asterix { 
+  stream-project [2];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@4fde28ab];
+  stream-project [1];
+}]
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:54
+Oct 26, 2017 9:26:06 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 327680 bytes
+Oct 26, 2017 9:49:25 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:49:25 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:2:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@481f7313, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@8dd0ca5, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  stream-select org.apache.asterix.runtime.evaluators.comparisons.EqualsDescriptor$_EvaluatorFactoryGen@3e036c5a;
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@a69041];
+  stream-project [1];
+}]
+Oct 26, 2017 9:49:25 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:49:25 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:49:25 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:49:25 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:49:25 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:55
+Oct 26, 2017 9:49:25 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 229376 bytes
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@142b7ff3]
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:6:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@300499b3;
+}]
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:3
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@9bc232a, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@622782e8, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@767a461e, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@864e063];
+  stream-project [1];
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@60293736];
+}]
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:56
+Oct 26, 2017 9:52:05 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 622592 bytes
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@3e47d919]
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:6:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@1a293279, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@3561bea7, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@1c58bfba, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@1c572239];
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@4f3e7130];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}]
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:57
+Oct 26, 2017 9:52:28 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 557056 bytes
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@77126af6]
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@b0d17df, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@3706507f, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@5327d9b3, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@8e4eda0];
+  stream-project [1];
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@6b34a08c];
+}]
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:58
+Oct 26, 2017 9:54:57 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 557056 bytes
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@6e34903d]
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@3333609, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@2c154222, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@626bb7ec, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@281476e4];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@328d9e91];
+  stream-project [1];
+}]
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:59
+Oct 26, 2017 9:55:48 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 557056 bytes
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@340fdeb0]
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@4c2fc4;
+}]
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:3
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:5:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@145bff79, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@394a5a73, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@58197091, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@5c7492c8];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@179f0e08];
+}]
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:60
+Oct 26, 2017 9:58:56 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 622592 bytes
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@7ced574a]
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:5:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@6f632dbe, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@17790048, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@7879a3e1, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@6eb8eca3];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@18403217];
+  stream-project [1];
+}]
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:61
+Oct 26, 2017 9:59:45 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 557056 bytes
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@47e41a17]
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:6:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@5bc3f8a0, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@428ab945, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@25d927a1, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@695fbe6c];
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@2d9d5d1f];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}]
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:62
+Oct 26, 2017 10:04:16 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 557056 bytes
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@3aca8978]
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:5:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@56c245af;
+}]
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:3
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@427a2dc5, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@5c8e530, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@6b272db8, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@2f0cf24e];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@3c0bf66f];
+}]
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:63
+Oct 26, 2017 10:05:13 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 622592 bytes
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@7ea865bb]
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:5:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@64e6d461, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@7bdee1c, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@3a85c6ed, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@10f69d83];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@42e10620];
+}]
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:64
+Oct 26, 2017 10:31:36 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 557056 bytes
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@2a44cd6e]
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:6:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@1a5c4cbf;
+}]
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:3
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:4:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@5ce50119, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@748ca71c, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@ccd3486, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@68a1b4d4];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@1cb89d10];
+  stream-project [1];
+}]
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:65
+Oct 26, 2017 10:33:33 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 622592 bytes
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@d9d7ddc]
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:5:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@d731f2f, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@557b438c, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@33eeb762, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@5310568b];
+  stream-project [1];
+}, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@468fb1a1];
+}, Asterix { 
+  ets;
+}]
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:66
+Oct 26, 2017 10:34:52 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 557056 bytes
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@49e7fddf]
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:5:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@5e81ad5d, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@65b80d95, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@13c71df8, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@3cadfc90];
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@6f95551d];
+  stream-project [1];
+}, Asterix { 
+  ets;
+}]
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:67
+Oct 26, 2017 10:35:59 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 557056 bytes
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:1:0:0:0 -> [org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$PartitionAndBuildActivityNode@4a6439df]
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: input: 0: CDID:3
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:3:0:0:0 -> [Asterix { 
+  ets;
+  unnest 0 <- org.apache.asterix.runtime.unnestingfunctions.std.ScanCollectionDescriptor$ScanCollectionUnnestingFunctionFactory@32fdec66;
+}]
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: output: 0: CDID:3
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: StartTasks
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.nc.work.StartTasksWork run
+INFO: Initializing TAID:TID:ANID:ODID:5:0:0:0 -> [org.apache.hyracks.storage.am.btree.dataflow.BTreeSearchOperatorDescriptor@1cc40f77, org.apache.hyracks.dataflow.std.join.OptimizedHybridHashJoinOperatorDescriptor$ProbeAndJoinActivityNode@43d1333c, org.apache.hyracks.dataflow.std.result.ResultWriterOperatorDescriptor@1e9269fc, Asterix { 
+  stream-project [1];
+  assign [1] := [org.apache.asterix.runtime.evaluators.functions.records.FieldAccessByIndexEvalFactory$_EvaluatorFactoryGen@421f1915];
+}, Asterix { 
+  ets;
+}, Asterix { 
+  stream-project [0];
+  assign [1] := [org.apache.asterix.runtime.evaluators.common.ClosedRecordConstructorEvalFactory@7e1c1996];
+  stream-project [1];
+}]
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter open
+INFO: open(0)
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.nc.dataset.DatasetPartitionWriter close
+INFO: close(0)
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: NotifyTaskComplete
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: CleanupJoblet
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.nc.work.CleanupJobletWork run
+INFO: Cleaning up after job: JID:68
+Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.nc.Joblet close
+WARNING: Freeing leaked 622592 bytes

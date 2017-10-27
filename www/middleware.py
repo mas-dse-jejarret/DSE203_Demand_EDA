@@ -323,15 +323,15 @@ class WebSession():
         colId1 = self.resultset[aliases[0]]['cols'].index(key1)
 
         j_result = {
-            "row" : []
+            "rows" : []
         }
 
         for i, row1 in enumerate(self.resultset[aliases[0]]['rows']):
             row1Key = (row1[colId1])
             for j, row2 in enumerate(self.resultset[aliases[1]]['rows']):
                 if row1[colKeyIndex1] == row2[colKeyIndex2]:
-                    j_result['row'].append(tuple([x for x in row1] + [x for x in row2]))
+                    j_result['rows'].append(tuple([x for x in row1] + [x for x in row2]))
 
-        print(json.dumps(j_result))
+        #print(json.dumps(j_result))
 
-        return "x"
+        return j_result 

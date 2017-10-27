@@ -1,4 +1,8 @@
 from flask import Flask, request, jsonify
+from middleware import WebSession
+from middleware import VirtualIntegrationSchema
+import json
+
 
 app = Flask(__name__)
 
@@ -6,6 +10,16 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
+
+@app.route('/api/service', methods=['POST'])
+def api_service():
+    query = request.get_json(silent=True)
+
+    # needs to change to reading from xml file
+    xml = VirtualIntegrationSchema()
+
+    web_session = WebSession(xml)
+    return jsonify(web_session.get_result_sets(query))
 
 
 @app.route("/histogram/<string:name>/")

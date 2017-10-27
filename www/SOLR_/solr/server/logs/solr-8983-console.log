@@ -1,6 +1,6 @@
-2017-10-24 23:46:14.964 INFO  (main) [   ] o.e.j.s.Server jetty-9.3.14.v20161028
-2017-10-24 23:46:16.102 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 7.0.0
-2017-10-24 23:46:16.102 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
-2017-10-24 23:46:16.103 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0, Default config dir: /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr/configsets/_default/conf
-2017-10-24 23:46:16.226 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2017-10-24T23:46:16.105Z
-2017-10-24 23:46:16.230 INFO  (main) [   ] o.a.s.s.StartupLoggingUtils Property solr.log.muteconsole given. Muting ConsoleAppender named CONSOLE
+2017-10-26 05:39:46.933 INFO  (main) [   ] o.e.j.s.Server jetty-9.3.14.v20161028
+2017-10-26 05:39:47.802 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 7.0.0
+2017-10-26 05:39:47.803 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2017-10-26 05:39:47.803 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: /root/DSE203_Demand_EDA/www/SOLR_/solr, Default config dir: /root/DSE203_Demand_EDA/www/SOLR_/solr/server/solr/configsets/_default/conf
+2017-10-26 05:39:47.829 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2017-10-26T05:39:47.804Z
+2017-10-26 05:39:47.830 INFO  (main) [   ] o.a.s.s.StartupLoggingUtils Property solr.log.muteconsole given. Muting ConsoleAppender named CONSOLE

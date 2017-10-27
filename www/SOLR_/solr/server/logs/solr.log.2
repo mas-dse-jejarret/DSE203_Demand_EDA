@@ -1,0 +1,62 @@
+2017-10-24 23:46:14.964 INFO  (main) [   ] o.e.j.s.Server jetty-9.3.14.v20161028
+2017-10-24 23:46:16.102 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 7.0.0
+2017-10-24 23:46:16.102 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2017-10-24 23:46:16.103 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0, Default config dir: /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr/configsets/_default/conf
+2017-10-24 23:46:16.226 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2017-10-24T23:46:16.105Z
+2017-10-24 23:46:16.230 INFO  (main) [   ] o.a.s.s.StartupLoggingUtils Property solr.log.muteconsole given. Muting ConsoleAppender named CONSOLE
+2017-10-24 23:46:16.476 INFO  (main) [   ] o.a.s.c.SolrResourceLoader Using system property solr.solr.home: /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr
+2017-10-24 23:46:16.564 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr/solr.xml
+2017-10-24 23:46:38.344 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 0 core definitions underneath /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr
+2017-10-24 23:46:38.683 INFO  (main) [   ] o.e.j.s.Server Started @25937ms
+2017-10-24 23:47:28.165 INFO  (qtp581374081-12) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=1029
+2017-10-24 23:47:28.594 INFO  (qtp581374081-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=36
+2017-10-24 23:47:28.638 INFO  (qtp581374081-16) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2017-10-24 23:47:28.639 INFO  (qtp581374081-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=bookstore&action=STATUS&wt=json} status=0 QTime=10
+2017-10-24 23:47:34.783 INFO  (qtp581374081-18) [   ] o.a.s.h.a.CoreAdminOperation core create command name=bookstore&action=CREATE&instanceDir=bookstore&wt=json
+2017-10-24 23:47:35.328 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.c.SolrResourceLoader [bookstore] Added 51 libs to classloader, from paths: [/Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/contrib/clustering/lib, /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/contrib/extraction/lib, /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/contrib/langid/lib, /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/contrib/velocity/lib, /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/dist]
+2017-10-24 23:47:59.640 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.0.0
+2017-10-24 23:48:00.020 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.s.IndexSchema [bookstore] Schema name=default-config
+2017-10-24 23:48:01.410 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2017-10-24 23:48:01.466 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.c.CoreContainer Creating SolrCore 'bookstore' using configuration from instancedir /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr/bookstore, trusted=true
+2017-10-24 23:48:01.567 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2017-10-24 23:48:01.583 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.c.SolrCore [[bookstore] ] Opening new SolrCore at [/Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr/bookstore], dataDir=[/Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr/bookstore/data/]
+2017-10-24 23:48:01.829 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2017-10-24 23:48:07.663 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2017-10-24 23:48:07.663 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2017-10-24 23:48:07.701 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2017-10-24 23:48:07.701 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2017-10-24 23:48:07.768 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.s.SolrIndexSearcher Opening [Searcher@16813a82[bookstore] main]
+2017-10-24 23:48:07.974 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr/bookstore/conf
+2017-10-24 23:48:08.009 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2017-10-24 23:48:08.022 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2017-10-24 23:48:08.042 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.h.ReplicationHandler Commits will be reserved for  10000
+2017-10-24 23:48:08.108 INFO  (searcherExecutor-7-thread-1-processing-x:bookstore) [   x:bookstore] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@16813a82[bookstore] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2017-10-24 23:48:08.108 INFO  (searcherExecutor-7-thread-1-processing-x:bookstore) [   x:bookstore] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2017-10-24 23:48:08.108 INFO  (searcherExecutor-7-thread-1-processing-x:bookstore) [   x:bookstore] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2017-10-24 23:48:08.114 INFO  (searcherExecutor-7-thread-1-processing-x:bookstore) [   x:bookstore] o.a.s.c.SolrCore [bookstore] Registered new searcher Searcher@16813a82[bookstore] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2017-10-24 23:48:08.146 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1582184674776580096
+2017-10-24 23:48:08.156 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={name=bookstore&action=CREATE&instanceDir=bookstore&wt=json} status=0 QTime=33381
+2017-10-24 23:51:56.396 INFO  (qtp581374081-13) [   x:bookstore] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at /Users/nirmal/documents/dse/nbudhath/dse203/solr-7.0.0/server/solr/bookstore/conf/managed-schema
+2017-10-24 23:52:10.934 INFO  (qtp581374081-13) [   x:bookstore] o.a.s.u.p.LogUpdateProcessorFactory [bookstore]  webapp=/solr path=/update/json/docs params={}{add=[7328d295-6062-415b-8237-332201fd6e23 (1582184914122440704), 76f0d585-b532-4977-8f1e-679d5d6b62dd (1582184914370953216), 0cff4081-06f0-4a62-b493-1f0d37cdcd19 (1582184914394021888), e23b1fb9-0ff4-4744-806c-2666a309a809 (1582184914395070464), 471c3b01-cded-4e39-903d-c82df1237c9d (1582184914404507648), 389f8f47-c0c5-4336-a8f1-641650a6eede (1582184914405556224), 03549fea-b8d8-46e6-b5fd-005a30006b5f (1582184914406604800), 8c49a6be-5e61-4c8a-8bb1-a93b6efdb2c2 (1582184914407653376), 6130e588-c969-468f-b717-13c4894fc481 (1582184914414993408), 490de320-6b38-46a3-9910-71bb506e9f58 (1582184914416041984), ... (77165 adds)]} 0 14919
+2017-10-24 23:52:11.048 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.u.DirectUpdateHandler2 start commit{_version_=1582184929477787648,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2017-10-24 23:52:11.049 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@1d1418d9 commitCommandVersion:1582184929477787648
+2017-10-24 23:52:17.467 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.s.SolrIndexSearcher Opening [Searcher@2581302d[bookstore] main]
+2017-10-24 23:52:17.470 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2017-10-24 23:52:17.497 INFO  (searcherExecutor-7-thread-1-processing-x:bookstore) [   x:bookstore] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@2581302d[bookstore] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_0(7.0.0):C77165)))}
+2017-10-24 23:52:17.497 INFO  (searcherExecutor-7-thread-1-processing-x:bookstore) [   x:bookstore] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2017-10-24 23:52:17.497 INFO  (searcherExecutor-7-thread-1-processing-x:bookstore) [   x:bookstore] o.a.s.c.SolrCore [bookstore] Registered new searcher Searcher@2581302d[bookstore] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_0(7.0.0):C77165)))}
+2017-10-24 23:52:17.499 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.u.p.LogUpdateProcessorFactory [bookstore]  webapp=/solr path=/update params={commit=true}{commit=} 0 6451
+2017-10-24 23:52:43.500 INFO  (qtp581374081-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1508889162683} status=0 QTime=0
+2017-10-24 23:52:43.788 INFO  (qtp581374081-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1508889162683} status=0 QTime=286
+2017-10-24 23:53:46.083 INFO  (qtp581374081-14) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=*:*&_=1508889163311} hits=77165 status=0 QTime=142
+2017-10-24 23:57:29.250 INFO  (qtp581374081-13) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1508889162683} status=0 QTime=0
+2017-10-24 23:57:29.279 INFO  (qtp581374081-18) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1508889162683&ts=1508889162683} status=503 QTime=2
+2017-10-24 23:57:29.302 INFO  (qtp581374081-17) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1508889449232} status=0 QTime=20
+2017-10-24 23:57:29.400 INFO  (qtp581374081-14) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/replication params={wt=json&command=details&_=1508889449232} status=0 QTime=120
+2017-10-24 23:57:29.538 INFO  (qtp581374081-19) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/admin/system params={wt=json&_=1508889449232} status=0 QTime=249
+2017-10-24 23:57:29.569 INFO  (qtp581374081-12) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1508889162683} status=0 QTime=278
+2017-10-24 23:57:34.907 INFO  (qtp581374081-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1508889162683} status=0 QTime=0
+2017-10-24 23:57:34.970 INFO  (qtp581374081-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1508889162683} status=0 QTime=62
+2017-10-26 01:57:05.741 INFO  (qtp581374081-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1508983025259} status=0 QTime=3
+2017-10-26 01:57:06.472 INFO  (qtp581374081-12) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1508983025260} status=0 QTime=709
+2017-10-26 01:57:21.679 INFO  (qtp581374081-15) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=*:*&_=1508983025433} hits=77165 status=0 QTime=14
