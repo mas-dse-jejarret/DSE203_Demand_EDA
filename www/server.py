@@ -37,7 +37,7 @@ def correlation(col1, col2):
     select corr(%s::int, %s::int)
     from orderlines o, products p
     where o.productid = p.productid
-    """ %col1, %col2
+    """ %(col1, col2)
 
     stmt = text(sql)
 
