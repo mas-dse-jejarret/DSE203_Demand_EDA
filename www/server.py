@@ -86,11 +86,22 @@ def histogram(groupby, count):
 	
 	stmt = text(sql)
 	
-	result = conn.execute(stmt)
-	print(result)
+	results = conn.execute(stmt)
+
+	l = []
+
+	for result in results:
+		d = {}
+		for item in request.args:
+			c = request.args[item]
+			d[c] = result[c]
+		l.append(d)
+	#
+	theresult_json = json.dumps(l, default=json_serial)
+
 	conn.close()
-	
-	return result
+
+	return theresult_json
 
 @app.route('/api/add_message/<uuid>', methods=['GET', 'POST'])
 def add_message(uuid):
