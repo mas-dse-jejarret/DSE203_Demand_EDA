@@ -78,7 +78,7 @@ def histogram(groupby, count):
 	conn = engine.connect()
 	
 	sql = """
-	SELECT %s, count(%s)
+	SELECT %s AS Group, count(%s) AS Count
 	FROM orders
 	Group by %s
 	Order by count(%s) DESC
@@ -89,15 +89,15 @@ def histogram(groupby, count):
 	results = conn.execute(stmt)
 
 	l = []
+	
 
 	for result in results:
 		d = {}
-		for item in request.args:
-			c = request.args[item]
-			d[c] = result[c]
+		d['Group'] = results['Group']
+		d['Count'] = results['Count']
 		l.append(d)
 	#
-	theresult_json = json.dumps(l, default=json_serial)
+	theresult_json = json.dumps(l)
 
 	conn.close()
 
