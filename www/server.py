@@ -97,11 +97,11 @@ def histogram(groupby, count):
 		d['Count'] = result[1]
 		l.append(d)
 		
-	#theresult_json = json.dumps(l)
+	theresult_json = json.dumps(l)
 
 	conn.close()
 
-	return 'x'#theresult_json
+	return theresult_json
 
 @app.route('/api/add_message/<uuid>', methods=['GET', 'POST'])
 def add_message(uuid):
