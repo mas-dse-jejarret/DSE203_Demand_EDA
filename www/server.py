@@ -92,11 +92,10 @@ def histogram(groupby, count):
 	
 
 	for result in results:
-		print(result)
-		#d = {}
-		#d['Group'] = result['Group']
-		#d['Count'] = result['Count']
-		#l.append(d)
+		d = {}
+		d['Group'] = result[0]
+		d['Count'] = result[1]
+		l.append(d)
 		
 	#theresult_json = json.dumps(l)
 
