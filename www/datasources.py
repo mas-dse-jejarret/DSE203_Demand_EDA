@@ -7,7 +7,6 @@ import pprint
 class SolrDataSource():
 
     def __init__(self, host="45.79.91.219", port=8983):
-        self.headers = {'Content-type': 'application/x-www-form-urlencoded'}
         self.host = host
         self.port = port
 
