@@ -53,3 +53,29 @@
 2017-10-26 05:42:04.111 INFO  (qtp834133664-19) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=*:*&_=1508996519894} hits=77165 status=0 QTime=48
 2017-10-26 16:27:06.736 INFO  (qtp834133664-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1509035227420} status=0 QTime=0
 2017-10-26 16:27:06.749 INFO  (qtp834133664-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1509035227422} status=0 QTime=10
+2017-10-27 01:02:10.343 INFO  (qtp834133664-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1509066133504} status=0 QTime=0
+2017-10-27 01:02:10.359 INFO  (qtp834133664-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1509066133506} status=0 QTime=13
+2017-10-27 20:32:37.863 INFO  (qtp834133664-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1509136359598} status=0 QTime=0
+2017-10-27 20:32:37.877 INFO  (qtp834133664-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1509136359600} status=0 QTime=18
+2017-10-28 23:04:01.900 INFO  (qtp834133664-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1509231841258} status=0 QTime=1
+2017-10-28 23:04:01.943 INFO  (qtp834133664-13) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1509231841260} status=0 QTime=41
+2017-10-28 23:04:12.828 INFO  (qtp834133664-15) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=camera&_=1509231841804} hits=0 status=0 QTime=14
+2017-10-28 23:04:23.722 INFO  (qtp834133664-11) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=camera,+ipod&_=1509231841804} hits=0 status=0 QTime=12
+2017-10-28 23:04:38.268 INFO  (qtp834133664-19) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=camera,+ipod&_=1509231841804} hits=0 status=0 QTime=1
+2017-11-01 02:30:43.285 INFO  (qtp834133664-16) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1509503442907} status=0 QTime=15
+2017-11-01 02:30:43.303 INFO  (qtp834133664-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1509503442908} status=0 QTime=29
+2017-11-01 02:31:01.873 INFO  (qtp834133664-14) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=*:*&_=1509503443234} hits=77165 status=0 QTime=7
+2017-11-01 02:31:15.208 INFO  (qtp834133664-11) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=thumbnail&_=1509503443234} hits=0 status=0 QTime=5
+2017-11-01 02:31:20.948 INFO  (qtp834133664-19) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=camera&_=1509503443234} hits=0 status=0 QTime=2
+2017-11-01 02:31:28.091 INFO  (qtp834133664-20) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=camera*&_=1509503443234} hits=0 status=0 QTime=20
+2017-11-01 02:31:35.416 INFO  (qtp834133664-17) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=*camera*&_=1509503443234} hits=0 status=0 QTime=57
+2017-11-01 02:31:46.848 INFO  (qtp834133664-18) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=camera.*&_=1509503443234} hits=0 status=0 QTime=1
+2017-11-01 02:31:58.510 INFO  (qtp834133664-18) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=*.*&_=1509503443234} hits=0 status=0 QTime=3
+2017-11-01 02:32:01.022 INFO  (qtp834133664-15) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=*.*&_=1509503443234} hits=0 status=0 QTime=3
+2017-11-01 02:32:10.256 INFO  (qtp834133664-13) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={_=1509503443234} hits=0 status=0 QTime=1
+2017-11-01 02:32:15.938 INFO  (qtp834133664-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1509503535837} status=0 QTime=0
+2017-11-01 02:32:15.949 INFO  (qtp834133664-11) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1509503535838} status=0 QTime=11
+2017-11-01 02:32:17.744 INFO  (qtp834133664-19) [   x:bookstore] o.a.s.c.S.Request [bookstore]  webapp=/solr path=/select params={q=*:*&_=1509503535905} hits=77165 status=0 QTime=0
+2017-11-05 15:03:23.178 INFO  (qtp834133664-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1509894202962} status=0 QTime=9
+2017-11-05 15:03:23.216 INFO  (qtp834133664-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1509894202963} status=0 QTime=36
+2017-11-05 15:03:23.261 INFO  (qtp834133664-11) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1509894202963} status=0 QTime=12

@@ -8523,3 +8523,167 @@ Oct 26, 2017 10:38:58 PM org.apache.asterix.active.ActiveLifecycleListener notif
 INFO: NO NEED TO NOTIFY JOB FINISH!
 Oct 26, 2017 10:38:58 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
 INFO: Executing: GetResultPartitionLocations: JobId@JID:68 ResultSetId@RSID:0 Known@null
+Oct 27, 2017 1:58:04 AM org.apache.asterix.api.http.server.QueryServiceServlet handleRequest
+INFO: {"host":"45.79.91.219:19002","path":"/query/service","statement":"\\n        USE AstxDB\\n        select v2 from TableBT v2\\n        WHERE v2.parent_id = 1 OR v2.parent_id = 2 OR v2.parent_id = 3;\\n        ","pretty":false,"mode":null,"clientContextID":null}
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: GetNodeControllersInfo
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.config.ConfigManager get
+WARNING: NC option [nc] storage.lsm.bloomfilter.falsepositiverate being accessed outside of NC-scoped configuration.
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobStart
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.cc.dataset.DatasetDirectoryService notifyJobCreation
+INFO: DatasetDirectoryService notified of new job JID:69
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Plan for org.apache.hyracks.api.job.ActivityCluster@3f185bdd
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Built 1 Task Clusters
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Tasks: [TID:ANID:ODID:1:0:0, TID:ANID:ODID:1:0:1, TID:ANID:ODID:5:0:0]
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: WaitForJobCompletion
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [blue[JID:69:TAID:TID:ANID:ODID:1:0:0:0]
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [red[JID:69:TAID:TID:ANID:ODID:1:0:1:0]
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [red[JID:69:TAID:TID:ANID:ODID:5:0:0:0]
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Plan for org.apache.hyracks.api.job.ActivityCluster@775306a4
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Built 1 Task Clusters
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Tasks: [TID:ANID:ODID:6:0:0, TID:ANID:ODID:6:0:1]
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: RegisterResultPartitionLocation: JobId@JID:69 ResultSetId@RSID:0 Partition@1 NPartitions@2 ResultPartitionLocation@0.0.0.0:46021 OrderedResult@true EmptyResult@false
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ReportResultPartitionWriteCompletion: JobId@JID:69 ResultSetId@RSID:0 Partition@1
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: RegisterResultPartitionLocation: JobId@JID:69 ResultSetId@RSID:0 Partition@0 NPartitions@2 ResultPartitionLocation@0.0.0.0:39819 OrderedResult@true EmptyResult@true
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ReportResultPartitionWriteCompletion: JobId@JID:69 ResultSetId@RSID:0 Partition@0
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [red[JID:69:TAID:TID:ANID:ODID:6:0:1:0]
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [blue[JID:69:TAID:TID:ANID:ODID:6:0:0:0]
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobCleanup: JobId@JID:69 Status@TERMINATED
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.cc.work.JobCleanupWork run
+INFO: Cleanup for JobRun with id: JID:69
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobletCleanupNotification
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobletCleanupNotification
+Oct 27, 2017 1:58:04 AM org.apache.asterix.active.ActiveLifecycleListener notifyJobFinish
+INFO: NO NEED TO NOTIFY JOB FINISH!
+Oct 27, 2017 1:58:04 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: GetResultPartitionLocations: JobId@JID:69 ResultSetId@RSID:0 Known@null
+Oct 27, 2017 2:01:11 AM org.apache.asterix.api.http.server.QueryServiceServlet handleRequest
+INFO: {"host":"45.79.91.219:19002","path":"/query/service","statement":"\\n        USE AstxDB\\n        select v2 from TableBT v2\\n        WHERE v2.parent_id = 1 OR v2.parent_id = 2 OR v2.parent_id = 3;\\n        ","pretty":false,"mode":null,"clientContextID":null}
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: GetNodeControllersInfo
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.config.ConfigManager get
+WARNING: NC option [nc] storage.lsm.bloomfilter.falsepositiverate being accessed outside of NC-scoped configuration.
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobStart
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.cc.dataset.DatasetDirectoryService notifyJobCreation
+INFO: DatasetDirectoryService notified of new job JID:70
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Plan for org.apache.hyracks.api.job.ActivityCluster@1a0e051d
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Built 1 Task Clusters
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Tasks: [TID:ANID:ODID:1:0:0, TID:ANID:ODID:1:0:1, TID:ANID:ODID:6:0:0]
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: WaitForJobCompletion
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [blue[JID:70:TAID:TID:ANID:ODID:1:0:0:0]
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [red[JID:70:TAID:TID:ANID:ODID:1:0:1:0]
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [blue[JID:70:TAID:TID:ANID:ODID:6:0:0:0]
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Plan for org.apache.hyracks.api.job.ActivityCluster@3c2a2ce9
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Built 1 Task Clusters
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Tasks: [TID:ANID:ODID:3:0:0, TID:ANID:ODID:3:0:1]
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: RegisterResultPartitionLocation: JobId@JID:70 ResultSetId@RSID:0 Partition@0 NPartitions@2 ResultPartitionLocation@0.0.0.0:39819 OrderedResult@true EmptyResult@true
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ReportResultPartitionWriteCompletion: JobId@JID:70 ResultSetId@RSID:0 Partition@0
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [blue[JID:70:TAID:TID:ANID:ODID:3:0:0:0]
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: RegisterResultPartitionLocation: JobId@JID:70 ResultSetId@RSID:0 Partition@1 NPartitions@2 ResultPartitionLocation@0.0.0.0:46021 OrderedResult@true EmptyResult@false
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ReportResultPartitionWriteCompletion: JobId@JID:70 ResultSetId@RSID:0 Partition@1
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [red[JID:70:TAID:TID:ANID:ODID:3:0:1:0]
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobCleanup: JobId@JID:70 Status@TERMINATED
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.cc.work.JobCleanupWork run
+INFO: Cleanup for JobRun with id: JID:70
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobletCleanupNotification
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobletCleanupNotification
+Oct 27, 2017 2:01:11 AM org.apache.asterix.active.ActiveLifecycleListener notifyJobFinish
+INFO: NO NEED TO NOTIFY JOB FINISH!
+Oct 27, 2017 2:01:11 AM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: GetResultPartitionLocations: JobId@JID:70 ResultSetId@RSID:0 Known@null
+Oct 28, 2017 4:13:09 PM org.apache.asterix.api.http.server.QueryServiceServlet handleRequest
+INFO: {"host":"45.79.91.219:19002","path":"/query/service","statement":"\\n        USE AstxDB\\n        select v2 from TableBT v2\\n        WHERE v2.parent_id = 1 OR v2.parent_id = 2 OR v2.parent_id = 3;\\n        ","pretty":false,"mode":null,"clientContextID":null}
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: GetNodeControllersInfo
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.config.ConfigManager get
+WARNING: NC option [nc] storage.lsm.bloomfilter.falsepositiverate being accessed outside of NC-scoped configuration.
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobStart
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.cc.dataset.DatasetDirectoryService notifyJobCreation
+INFO: DatasetDirectoryService notified of new job JID:71
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Plan for org.apache.hyracks.api.job.ActivityCluster@75759893
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Built 1 Task Clusters
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Tasks: [TID:ANID:ODID:1:0:0, TID:ANID:ODID:1:0:1, TID:ANID:ODID:5:0:0]
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: WaitForJobCompletion
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [blue[JID:71:TAID:TID:ANID:ODID:5:0:0:0]
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [blue[JID:71:TAID:TID:ANID:ODID:1:0:0:0]
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [red[JID:71:TAID:TID:ANID:ODID:1:0:1:0]
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Plan for org.apache.hyracks.api.job.ActivityCluster@192814b3
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Built 1 Task Clusters
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.cc.executor.ActivityClusterPlanner planActivityCluster
+INFO: Tasks: [TID:ANID:ODID:3:0:0, TID:ANID:ODID:3:0:1]
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: RegisterResultPartitionLocation: JobId@JID:71 ResultSetId@RSID:0 Partition@0 NPartitions@2 ResultPartitionLocation@0.0.0.0:39819 OrderedResult@true EmptyResult@true
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ReportResultPartitionWriteCompletion: JobId@JID:71 ResultSetId@RSID:0 Partition@0
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [blue[JID:71:TAID:TID:ANID:ODID:3:0:0:0]
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: RegisterResultPartitionLocation: JobId@JID:71 ResultSetId@RSID:0 Partition@1 NPartitions@2 ResultPartitionLocation@0.0.0.0:46021 OrderedResult@true EmptyResult@false
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: ReportResultPartitionWriteCompletion: JobId@JID:71 ResultSetId@RSID:0 Partition@1
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: TaskComplete: [red[JID:71:TAID:TID:ANID:ODID:3:0:1:0]
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobCleanup: JobId@JID:71 Status@TERMINATED
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.cc.work.JobCleanupWork run
+INFO: Cleanup for JobRun with id: JID:71
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobletCleanupNotification
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: JobletCleanupNotification
+Oct 28, 2017 4:13:09 PM org.apache.asterix.active.ActiveLifecycleListener notifyJobFinish
+INFO: NO NEED TO NOTIFY JOB FINISH!
+Oct 28, 2017 4:13:09 PM org.apache.hyracks.control.common.work.WorkQueue$WorkerThread run
+INFO: Executing: GetResultPartitionLocations: JobId@JID:71 ResultSetId@RSID:0 Known@null
+Nov 04, 2017 2:48:32 AM org.apache.hyracks.http.server.HttpServer getServlet
+WARNING: No servlet for /bad-request
