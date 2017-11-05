@@ -94,29 +94,31 @@ def correlation(col1, col2):
 	
 @app.route("/api/covariance/<col1>/<col2>")
 def covariance(col1, col2):
-	"""Determine the covariance coefficient between two columns."""
-	
-	engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
-	conn = engine.connect()
+    """Determine the covariance coefficient between two columns."""
 
-	sql = """
-	select covar_samp(%s::int, %s::int)
-	from orderlines o, products p
-	where o.productid = p.productid
-	""" %(col1, col2)
+    engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
+    conn = engine.connect()
 
-	stmt = text(sql)
+    sql = """
+    select covar_samp(%s::int, %s::int)
+    from orderlines o, products p
+    where o.productid = p.productid
+    """ %(col1, col2)
 
-	result = conn.execute(stmt)
+    stmt = text(sql)
 
-	for row in result:
-		print(row[0])
-	conn.close()
+    result = conn.execute(stmt)
 
-	return str(row[0])
+    for row in result:
+        print(row[0])
+    conn.close()
+
+    return str(row[0])
+
 
 @app.route("/api/histogram/<groupby>/<count>")
 def histogram(groupby, count):
+
     engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
     conn = engine.connect()
 
@@ -143,11 +145,13 @@ def histogram(groupby, count):
 
     return theresult_json
 
+
 @app.route('/api/add_message/<uuid>', methods=['GET', 'POST'])
 def add_message(uuid):
     content = request.get_json(silent=True)
     print (content)
     return jsonify('{"h" : "ok"}')
+
 
 @app.route('/api/asterixwrap', methods=['GET'])
 def api_asterixwrap():
