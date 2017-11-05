@@ -142,6 +142,7 @@ if res.ok:
     print res.json()
 ```
 
+
 ## Sample Asterix call
 ```python
 import requests
@@ -150,3 +151,25 @@ if res.ok:
     print res.json()
 ```
 
+## Sample Native Solr and Asterix Calls
+```python
+from __future__ import print_function
+import requests
+import json
+import pprint
+
+pp = pprint.PrettyPrinter(depth=6)
+sql = """USE AstxDB;
+        select *  from TableBT v;
+"""
+
+ads = AsterixDataSource()
+jsonobj = ads.execute(sql)
+
+pp.pprint(jsonobj)
+
+sds = SolrDataSource()
+jsonobj = sds.execute("*:*")
+
+pp.pprint(jsonobj)
+```
