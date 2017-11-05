@@ -2,8 +2,8 @@ from __future__ import print_function
 from flask import Flask, request, jsonify
 from middleware import WebSession
 from middleware import VirtualIntegrationSchema
-from DataSources2 import AsterixDataSource
-from DataSources2 import SolrDataSource
+from datasources import AsterixDataSource
+from datasources import SolrDataSource
 
 from sqlalchemy import create_engine, text
 from datetime import date, datetime
