@@ -2,8 +2,8 @@ from flask import Flask, request, jsonify
 
 from middleware import WebSession
 from middleware import VirtualIntegrationSchema
-from datasources import AsterixDataSource
-from datasources import SolrDataSource
+from DataSources2 import AsterixDataSource
+from DataSources2 import SolrDataSource
 
 import json
 
