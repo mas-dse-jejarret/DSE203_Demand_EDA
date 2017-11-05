@@ -3,6 +3,24 @@ import requests
 import json
 import pprint
 
+#create solr data source
+class SolrDataSource():
+
+    def __init__(self, host="45.79.91.219", port=8983):
+        self.headers = {'Content-type': 'application/x-www-form-urlencoded'}
+        self.host = host
+        self.port = port
+
+    def execute(self, q):
+        connstr = 'http://{0}:{1}/solr/bookstore/select?q={2}'.format(self.host, self.port, q)
+        # print(connstr)
+        response = requests.get(connstr)
+
+        jsonobj = json.loads(response.text)
+
+        if jsonobj['responseHeader']['status'] == 0:
+            return jsonobj['response']['docs']
+
 
 class AsterixDataSource():
 
@@ -11,13 +29,17 @@ class AsterixDataSource():
         self.host = host
         self.port = port
 
-    def execute(self, sql):
-        connStr = 'http://{0}:{1}/query/service'.format(self.host, self.port)
-        print(connStr)
-        response = requests.post(connStr, data=sql, headers=self.headers)
+    def execute(self, _sql):
+        connstr = 'http://{0}:{1}/query/service'.format(self.host, self.port)
+
+        response = requests.post(connstr, data=_sql, headers=self.headers)
         #clean empty properties
         jsonobj = json.loads(response.text.replace("{ ,", "{ "))
-        return jsonobj
+
+        if jsonobj['status'] == 'success':
+            return jsonobj['results']
+        else:
+            return json.dumps("[]")
 
 if __name__ == '__main__':
     pp = pprint.PrettyPrinter(depth=6)
@@ -28,8 +50,12 @@ if __name__ == '__main__':
     ads = AsterixDataSource()
     jsonobj = ads.execute(sql)
 
-    if jsonobj['status']== 'success':
-        pp.pprint(jsonobj['results'])
+    pp.pprint(jsonobj)
+
+    sds = SolrDataSource()
+    jsonobj = sds.execute("*:*")
+
+    pp.pprint(jsonobj)
 
 
 
