@@ -132,3 +132,21 @@ res = requests.get('http://localhost:80/api/web_method/json?c1=productid&c2=ship
 if res.ok:
     print res.json()
 ```
+
+
+## Sample Solr call
+```python
+import requests
+res = requests.get('http://45.79.91.219/api/solrwrap')
+if res.ok:
+    print res.json()
+```
+
+## Sample Asterix call
+```python
+import requests
+res = requests.get('http://45.79.91.219/api/asterixwrap')
+if res.ok:
+    print res.json()
+```
+
