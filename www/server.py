@@ -4,9 +4,10 @@ from middleware import WebSession
 from middleware import VirtualIntegrationSchema
 from datasources import AsterixDataSource
 from datasources import SolrDataSource
-
+from datasources import get_node_ids, convertToIn
 from sqlalchemy import create_engine, text
 from datetime import date, datetime
+
 
 
 import json
@@ -165,6 +166,21 @@ def api_asterixwrap():
     return jsonify(jsonobj)
 
 
+def getNodeIds():
+    sql="""
+    use bookstore_dp;
+
+    select user.nodeID
+    from ClassificationInfo user
+    where  user.category.nested.nested.level_2 = "Education & Reference";
+    """
+    # ads = SolrDataSource()
+    # jsonobj = ads.execute(q)
+
+
+
+
+
 @app.route('/api/solrwrap', methods=['GET'])
 def api_solrwrap():
     q = "*:*"
@@ -173,6 +189,40 @@ def api_solrwrap():
     jsonobj = ads.execute(q)
 
     return jsonify(jsonobj)
+
+
+@app.route("/api/generic")
+def generic():
+
+    engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
+    conn = engine.connect()
+
+    _jlist = get_node_ids() # will be replaced by asterix call once connected to DB - the result will not change though
+    _inStr = convertToIn(_jlist)
+
+    sql = """
+    SELECT category, sum(books_sold) AS num_sold FROM monthly_sales
+    WHERE (mon = 11 or mon = 12)
+    AND category IN {0}
+    GROUP BY category
+    ORDER BY num_sold DESC
+    """.format (_inStr)
+
+    stmt = text(sql)
+
+    results = conn.execute(stmt)
+
+    l = []
+
+    for result in results:
+        d = {'category': result[0], 'num_sold': float(result[1])}
+        l.append(d)
+
+    theresult_json = json.dumps(l)
+
+    conn.close()
+
+    return theresult_json
 
 
 
