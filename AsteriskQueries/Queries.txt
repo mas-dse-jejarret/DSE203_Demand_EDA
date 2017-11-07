@@ -1,0 +1,11 @@
+(using sql++)
+
+use bookstore_dp;
+
+select ci as uid, ARRAY_COUNT(grp) as count
+from ClassificationInfo user
+group by user.classification as ci
+group as grp(user as msg)
+;
+
+
