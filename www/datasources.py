@@ -279,8 +279,8 @@ if __name__ == '__main__':
     #
     # pp.pprint(jsonobj)
     #
-    # sds = SolrDataSource()
-    # jsonobj = sds.execute("*:*")
+    sds = SolrDataSource()
+    jsonobj = sds.execute("*:*")
     #
     # pp.pprint(jsonobj)
 
