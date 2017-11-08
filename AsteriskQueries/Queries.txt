@@ -9,3 +9,9 @@ group as grp(user as msg)
 ;
 
 
+use bookstore_dp;
+
+select user.nodeID
+from ClassificationInfo user
+where  user.category.nested.nested.level_2 = "Education & Reference"
+;
