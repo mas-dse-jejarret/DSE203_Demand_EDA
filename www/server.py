@@ -8,7 +8,7 @@ from datasources import get_node_ids, convertToIn
 from sqlalchemy import create_engine, text
 from datetime import date, datetime
 import simplejson
-
+from sentiment_polarity import Sales_Reviews
 
 import json
 
@@ -331,11 +331,10 @@ def Downware_Sales(season):
     # print(theresult_json)
     return (theresult_json)
 
-
-
-
-
-
+@app.route('/sentiment_polarity/<category>/<month>', methods=['GET'])
+def sentiment_polarity(category, month):
+    sr = Sales_Reviews(category, month)
+    return sr
 
 
 

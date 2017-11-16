@@ -244,6 +244,12 @@ def generic(list):
 
     return theresult_json
 
+@app.route("/sentiment_polarity/<category>/<month>")
+def sentiment_polarity(category, month):
+    sr = Sales_Reviews(category, month)
+    return sr
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0',port=80)
 

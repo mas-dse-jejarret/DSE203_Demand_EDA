@@ -4,6 +4,7 @@ from middleware import WebSession
 from middleware import VirtualIntegrationSchema
 from datasources import AsterixDataSource
 from datasources import SolrDataSource
+from sentiment_polarity import Sales_Reviews
 
 import json
 
@@ -44,6 +45,11 @@ def api_solrwrap():
 @app.route("/")
 def hello():
     return "You shouldn't be here"
+
+@app.route("/quicktest/<category>/<month>")
+def quicktest(category, month):
+    sr = Sales_Reviews(category, month)
+    return sr
 
 if __name__ == "__main__":
     app.run()
