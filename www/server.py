@@ -12,7 +12,6 @@ from sentiment_polarity import Sales_Reviews
 
 import json
 
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -93,7 +92,7 @@ def correlation(col1, col2):
 
     return str(row[0])
 
-@app.route("/api/covariance/<col1>/<col2>")
+@app.route("/api/covariance/<col1>/<col2>", methods=['GET'])
 def covariance(col1, col2):
     """Determine the covariance coefficient between two columns."""
 
@@ -166,17 +165,73 @@ def api_asterixwrap():
     return jsonify(jsonobj)
 
 
-def getNodeIds():
+def getNodeIds(category_list):
+
+    _where = ' OR '.join(['user.category.nested.nested.level_2 = "{0}"'.format(x) for x in category_list])
+
     sql="""
     use bookstore_dp;
+
     select user.nodeID
     from ClassificationInfo user
-    where  user.category.nested.nested.level_2 = "Education & Reference";
-    """
-    # ads = SolrDataSource()
-    # jsonobj = ads.execute(q)
+    WHERE {0}
+    """.format(_where)
+
+    # where  user.category.nested.nested.level_2 = "Education & Reference";
+
+    ads = AsterixDataSource(host="132.249.238.32")
+    jsonobj = ads.execute(sql)
+
+    return jsonobj
 
 
+@app.route("/api/highest_monthly_sales_by_category/<list>")
+def api_highest_monthly_sales_by_category(list):
+    category_list = list.split(",")
+
+    # print(category_list)
+
+    engine = create_engine('postgresql+psycopg2://student:123456@132.249.238.27:5432/bookstore_dp')
+    #engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
+    #
+    conn = engine.connect()
+    #
+    _jlist = getNodeIds(category_list) # will be replaced by asterix call once connected to DB - the result will not change though
+    print(_jlist)
+    _inStr = convertToIn(_jlist)
+    # print(_inStr)
+    #
+    sql = """
+       SELECT mon, sum(books_sold) AS num_sold
+       FROM
+         (     select EXTRACT(MONTH from o.billdate) as mon, p.nodeid as category, count(o.orderid) as books_sold
+               from orderlines as o, products as p
+               where o.productid = p.productid AND o.totalprice > 0::money
+               group by p.productid, EXTRACT(MONTH from billdate)
+               order by p.productid
+         ) monthlysales
+       WHERE category IN {0}
+       GROUP By mon
+       ORDER BY num_sold DESC
+       """.format(_inStr)
+    #
+    print(sql)
+
+    stmt = text(sql)
+
+    results = conn.execute(stmt)
+
+    l = []
+
+    for result in results:
+        d = {'mon': int(result[0]), 'num_sold' : int(result[1])}
+        l.append(d)
+
+    theresult_json = json.dumps(l)
+
+    conn.close()
+
+    return (theresult_json)
 
 
 
