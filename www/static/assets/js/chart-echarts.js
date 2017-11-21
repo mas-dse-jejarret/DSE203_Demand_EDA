@@ -945,8 +945,8 @@ function gauge_load_chart(option){
         success: function(data) {
             var d = data; // get data value from json
             //alert(d.d);
-            console.log(d.d);
-            option.series[0].data[0].value = d.d;
+            console.log(d.value);
+            option.series[0].data[0].value = d.value;
             myChart.setOption(option,true);
         }
     });    
