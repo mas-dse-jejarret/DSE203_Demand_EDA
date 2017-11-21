@@ -36,10 +36,11 @@ def save_api_value(api_id, value):
 
 @app.route("/get/<api_id>")
 def get_api_value(api_id):
-    value = { 'value' : cache.get(api_id) }
+    value = cache.get(api_id);
+
     if value is None:
         value = 0
-    return jsonify(value)
+    return jsonify({ 'value' :  value })
 
 @app.route("/cache")
 def get_my_item():
