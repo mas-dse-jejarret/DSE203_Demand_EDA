@@ -928,7 +928,7 @@ if($("#gauge_chart").length){
 gauge_load_chart(option);
 var timeTicket = setInterval(function (){
     gauge_load_chart(option);
-},1500);
+},3500);
 
 function gauge_load_chart(option){
     option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
@@ -937,7 +937,7 @@ function gauge_load_chart(option){
     console.log('ok');
     
     $.ajax({
-        url: "http://localhost/data/1",
+        url: "/get/1",
         type: "GET",
         dataType: "json",
         async:false,
