@@ -931,8 +931,8 @@ var timeTicket = setInterval(function (){
 },3500);
 
 function gauge_load_chart(option){
-    option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
-    myChart.setOption(option,true);
+    //option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
+    //myChart.setOption(option,true);
     
     console.log('ok');
     
