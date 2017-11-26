@@ -5,6 +5,7 @@ import random
 import time
 import os
 import json
+import numpy as np
 
 cache = SimpleCache()
 
@@ -29,10 +30,49 @@ def data_api_id(api_id):
     return jsonify(d)
 
 
+def get_stack():
+    stack = cache.get('stack')
+    if stack is None:
+        stack = []
+        cache.set("stack", stack, timeout=60*5)
+    return stack
+
+def get_ave_cache():
+    ave = cache.get('ave')
+    if ave is None:
+        ave = 0
+        cache.set("ave", ave, timeout=60*5)
+    return ave
+
+
+
 @app.route("/save/<api_id>/<value>")
 def save_api_value(api_id, value):
-    cache.set(api_id, value, timeout=5 * 60)
+    stack = get_stack()
+    cache.set(api_id, value, timeout=60*5)
+
+    if len(stack) > 100:
+        stack.pop(0)
+
+    stack.append(float(value));
+    cache.set("stack", stack, timeout=60*5)
+
+    ave_cache = get_ave_cache()
+    ave_cache = np.average([ave_cache, np.average(stack)])
+    cache.set("ave", ave_cache, timeout=60*5)
+
+
     return jsonify(1)
+
+
+@app.route("/get_stack_json")
+def get_stack_json():
+    stack = get_stack()
+    ave = get_ave_cache()
+    fave = "{0:.2f}".format(round(ave, 2))
+
+    return jsonify({ 'series' : stack, 'average' : fave })
+
 
 @app.route("/get/<api_id>")
 def get_api_value(api_id):

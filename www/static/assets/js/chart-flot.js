@@ -23,42 +23,71 @@ if($("#flot-realtime").length){
         // be fetched from a server
 
         var rtdata = [],
-            totalPoints = 300;
+            totalPoints = 10;
 
         function RealTimegetRandomData() {
 
-            if (rtdata.length > 0)
-                rtdata = rtdata.slice(1);
+//            if (rtdata.length > 0)
+//                rtdata = rtdata.slice(1);
+//
+//            // Do a random walk
+//
+//            while (rtdata.length < totalPoints) {
+//
+//                var prev = rtdata.length > 0 ? rtdata[rtdata.length - 1] : 50,
+//                    y = prev + Math.random() * 10 - 5;
+//
+//                if (y < 0) {
+//                    y = 0;
+//                } else if (y > 100) {
+//                    y = 100;
+//                }
+//
+//                //console.log(y);
+//
+//                rtdata.push(y);
+//            }
 
-            // Do a random walk
 
-            while (rtdata.length < totalPoints) {
 
-                var prev = rtdata.length > 0 ? rtdata[rtdata.length - 1] : 50,
-                    y = prev + Math.random() * 10 - 5;
 
-                if (y < 0) {
-                    y = 0;
-                } else if (y > 100) {
-                    y = 100;
-                }
 
-                rtdata.push(y);
-            }
+                $.ajax({
+                    cache: false,
+                    type: "GET",
+                    url: '/get_stack_json',
+                    async: false,
+                    success : function(data) {
+                        console.log(data.series);
+                        rtdata = data.series;
+                        $("#ave_time").text(data.average);
+                    }
+                });
 
             // Zip the generated y values with the x values
 
+
+
             var res = [];
             for (var i = 0; i < rtdata.length; ++i) {
-                res.push([i, rtdata[i]])
+                console.log("rt" + rtdata[i]);
+                res.push([i, rtdata[i]]);
             }
+
+           // console.log(res);
+
+           for(var i = 0; i< res.length; i++) {
+            console.log(res[i]);
+           }
+
+           //res=[[0, 25],[1,33],[2,45],[3,5]];
 
             return res;
         }
 
         // Set up the control widget
 
-        var updateInterval = 30;
+        var updateInterval = 1000;
         $("#updateInterval").val(updateInterval).change(function() {
             var v = $(this).val();
             if (v && !isNaN(+v)) {
@@ -74,7 +103,7 @@ if($("#flot-realtime").length){
 
         var realplot = $.plot("#flot-realtime", [RealTimegetRandomData()], {
             series: {
-                shadowSize: 0 // Drawing is faster without shadows
+                shadowSize: 1 // Drawing is faster without shadows
             },
             yaxis: {
                 min: 0,
@@ -98,6 +127,7 @@ if($("#flot-realtime").length){
             // Since the axes don't change, we don't need to call realplot.setupGrid()
 
             realplot.draw();
+
             setTimeout(realtimeupdate, updateInterval);
         }
 

@@ -1,4 +1,5 @@
 from __future__ import print_function
+from werkzeug.contrib.cache import SimpleCache
 from flask import Flask, request, jsonify
 from middleware import WebSession
 from middleware import VirtualIntegrationSchema
@@ -8,8 +9,28 @@ from datasources import get_node_ids, convertToIn
 from sqlalchemy import create_engine, text
 from datetime import date, datetime
 import simplejson
+from flask_cache import Cache
 
 import json
+
+CACHE_TIMEOUT = 300
+
+# cache = SimpleCache()
+cache = Cache(config={'CACHE_TYPE': 'simple'})
+
+class Cached(object):
+
+    def __init__(self, timeout=None):
+        self.timeout = timeout or CACHE_TIMEOUT
+
+    def __call__(self, f):
+        def decorator(*args, **kwargs):
+            response = cache.get(request.path)
+            if response is None:
+                response = f(*args, **kwargs)
+                cache.set(request.path, response, self.timeout)
+            return response
+        return decorator
 
 app = Flask(__name__)
 
@@ -36,9 +57,11 @@ def json_serial(obj):
     raise TypeError ("Type %s not serializable" % type(obj))
 
 @app.route("/api/web_method/<format>")
+@cache.cached(timeout=50)
 def api_web_method(format):
 
 #    engine = create_engine('postgresql+psycopg2://student:123456@132.249.238.27:5432/bookstore_dp')
+
     engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
     conn = engine.connect()
 
@@ -50,7 +73,6 @@ def api_web_method(format):
     """
 
     stmt = text(sql)
-
     results = conn.execute(stmt)
 
     l = []
@@ -62,7 +84,8 @@ def api_web_method(format):
             print (c)
             d[c] = result[c]
         l.append(d)
-    #
+
+
     theresult_json = json.dumps(l, default=json_serial)
 
     conn.close()
