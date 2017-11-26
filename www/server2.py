@@ -38,7 +38,8 @@ def json_serial(obj):
 @app.route("/api/web_method/<format>")
 def api_web_method(format):
 
-    engine = create_engine('postgresql+psycopg2://student:123456@132.249.238.27:5432/bookstore_dp')
+#    engine = create_engine('postgresql+psycopg2://student:123456@132.249.238.27:5432/bookstore_dp')
+    engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
     conn = engine.connect()
 
     sql = """
@@ -95,7 +96,8 @@ def correlation(col1, col2):
 def covariance(col1, col2):
     """Determine the covariance coefficient between two columns."""
 
-    engine = create_engine('postgresql+psycopg2://student:123456@132.249.238.27:5432/bookstore_dp')
+    engine = create_engine('postgresql+psycopg2://postgres@45.79.91.219/MyBookStore')
+    #engine = create_engine('postgresql+psycopg2://student:123456@132.249.238.27:5432/bookstore_dp')
     conn = engine.connect()
 
     sql = """

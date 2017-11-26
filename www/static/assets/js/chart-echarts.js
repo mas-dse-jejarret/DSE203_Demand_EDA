@@ -928,13 +928,13 @@ if($("#gauge_chart").length){
 gauge_load_chart(option);
 var timeTicket = setInterval(function (){
     gauge_load_chart(option);
-},3500);
+},500);
 
 function gauge_load_chart(option){
     //option.series[0].data[0].value = (Math.random()*100).toFixed(2) - 0;
     //myChart.setOption(option,true);
     
-    console.log('ok');
+//    console.log('ok');
     
     $.ajax({
         url: "/get/1",
