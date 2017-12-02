@@ -223,10 +223,7 @@ def get_node_ids():
     return json.loads(json_str)
 
 
-def convertToIn(_jlist):
-    m = ','.join(["'{0}'".format(str(x["nodeID"])) for x in _jlist])
-    #print(m)
-    return '({0})'.format(m)
+
 
 
 
@@ -267,6 +264,9 @@ class AsterixDataSource():
             return jsonobj['results']
         else:
             return json.dumps("[]")
+
+
+
 
 if __name__ == '__main__':
     # pp = pprint.PrettyPrinter(depth=6)
