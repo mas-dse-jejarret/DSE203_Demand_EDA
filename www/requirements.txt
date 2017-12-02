@@ -1,0 +1,13 @@
+
+Python 3.6
+
+Libraries
+---------------
+flask  0.12.2
+pandas 0.20.3
+psycog2 2.7.3.2
+pysolr 3.6.0
+simplejson  3.12.0   
+sqlalchemy   1.1.13
+textblob 0.13.1
+urllib
