@@ -56,8 +56,6 @@ def Histogram(table, groupby, count):
     Order by count(%s) DESC
     """ % (groupby, count, table, groupby, count)
 
-    # print(sql)
-
     stmt = text(sql)
 
     results = conn.execute(stmt)
@@ -73,77 +71,6 @@ def Histogram(table, groupby, count):
     conn.close()
 
     return theresult_json
-
-
-def getTopCategories(limit):
-    list = ['Education & Reference',
-             'Geography & Cultures',
-             'Programming',
-             'Science, Nature & How It Works',
-             'Graphics & Design',
-             'Animals',
-             'Early Learning',
-             'Engineering',
-             'Home Improvement & Design',
-             'Growing Up & Facts of Life',
-             'History',
-             'Architecture',
-             'Regional & International',
-             'Programming Languages',
-             'Cars, Trains & Things That Go',
-             "Women's Health",
-             'Digital Audio, Video & Photography',
-             'Software',
-             'Transportation',
-             'Automotive',
-             'Hardware & DIY',
-             'Music',
-             'Pregnancy & Childbirth',
-             'Photography & Video',
-             'Military',
-             'Crafts & Hobbies',
-             'Christian Books & Bibles',
-             'Comics & Graphic Novels',
-             'Games & Strategy Guides',
-             'Biographies',
-             'Asian Cooking',
-             'Needlecrafts & Textile Crafts',
-             'Aging',
-             'Investing',
-             'Activities, Crafts & Games',
-             'Fairy Tales, Folk Tales & Myths',
-             'Physics',
-             'Gardening & Landscape Design',
-             'Web Development & Design',
-             'Literature & Fiction',
-             'Nature & Ecology',
-             'Mental Health',
-             'Religions',
-             'Puzzles & Games',
-             'Diseases & Physical Ailments',
-             'Europe',
-             "Children's & Teens",
-             'Industries',
-             'Africa',
-             'Management & Leadership']
-    return [{'category': l} for l in list[:limit]]
-
-
-def getCategories():
-    sql="""
-    use bookstore_dp;
-
-    select user.category.nested.nested.level_2 as category
-    from ClassificationInfo user
-    group by category;
-    """
-
-
-    ads = AsterixDataSource(host=astx_host)
-    jsonobj = ads.execute(sql)
-
-    return (jsonobj)
-
 
 def getNodeIds(category_list):
 
@@ -164,17 +91,20 @@ def getNodeIds(category_list):
 
     return jsonobj
 
-
-def convertToIn(_jlist):
-    m = ','.join(["'{0}'".format(str(x["nodeID"])) for x in _jlist])
-    return '({0})'.format(m)
-
 def HighestMonthlySalesByCategory(category_list, limit):
+
+    def convertToIn(_jlist):
+        m = ','.join(["'{0}'".format(str(x["nodeID"])) for x in _jlist])
+        return '({0})'.format(m)
+
     engine = create_engine(pg_connstring)
 
     conn = engine.connect()
 
     _jlist = getNodeIds(category_list)
+
+    # print(_jlist)
+
     _inStr = convertToIn(_jlist)
 
     #
@@ -211,117 +141,42 @@ def HighestMonthlySalesByCategory(category_list, limit):
 
     return (theresult_json)
 
-def OptimizedTopCategories(num_categories, months):
-    monthStr = ','.join([str(x) for x in months])
-
-    mainList = []
-
-    mainDict = {}
-
-    categories = getTopCategories(25)
-
-    for item in [x['category'] for x in categories]:
-        category = [item]
-
-        _jlist = getNodeIds(category)
-        _inStr = convertToIn(_jlist)
-        engine = create_engine(pg_connstring)
-        conn = engine.connect()
-
-        sql = """
-        SELECT '{3}' as category, sum(books_sold) AS num_sold
-        FROM
-          (     select EXTRACT(MONTH from o.billdate) as mon, count(o.orderid) as books_sold
-                from orderlines as o, products as p
-                where o.productid = p.productid AND o.totalprice > 0::money
-                AND p.nodeid IN {2}
-                group by EXTRACT(MONTH from billdate)
-          ) monthlysales
-          WHERE mon in ({0})
-        GROUP BY category
-        """.format(monthStr,num_categories, _inStr, item.replace("'",""))
-
-        stmt = text(sql)
-        results = conn.execute(stmt)
-
-        l = []
-
-        result = results.fetchone()
-
-        t = (item, 0)
-
-        if result is not None:
-            t = (item, float(result[1]))
-            mainList.append(t)
-
-        # for result in results:
-        #     d = {'category': result[0], 'num_sold': float(result[1])}
-        #     l.append(d)
-
-        conn.close()
-
-        # mainList.append(d)
-
-        #
-    return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
-
-
 def TopCategories(num_categories, months):
     # return jsonify({ "n" : num_categories, "m" : months})
 
-    monthStr = ','.join([str(x) for x in months])
+    engine = create_engine(pg_connstring)
+    conn = engine.connect()
 
-    mainList = []
 
-    mainDict = {}
+    sql = """
+    SELECT category, sum(books_sold) AS num_sold
+    FROM
+      (     select EXTRACT(MONTH from o.billdate) as mon, p.nodeid as category, count(o.orderid) as books_sold
+            from orderlines as o, products as p
+            where o.productid = p.productid AND o.totalprice > 0::money
+            group by p.nodeid, EXTRACT(MONTH from billdate)
+            order by p.nodeid
+      ) monthlysales
+      WHERE mon in ({0})
+    GROUP BY category
+    ORDER BY num_sold DESC
+    LIMIT ({1})
+    """.format(months,num_categories)
 
-    categories = getCategories()
+    stmt = text(sql)
 
-    for item in [x['category'] for x in categories]:
-        print(item)
-        category = [item]
+    results = conn.execute(stmt)
 
-        _jlist = getNodeIds(category)
-        _inStr = convertToIn(_jlist)
-        engine = create_engine(pg_connstring)
-        conn = engine.connect()
+    l = []
 
-        sql = """
-        SELECT '{3}' as category, sum(books_sold) AS num_sold
-        FROM
-          (     select EXTRACT(MONTH from o.billdate) as mon, count(o.orderid) as books_sold
-                from orderlines as o, products as p
-                where o.productid = p.productid AND o.totalprice > 0::money
-                AND p.nodeid IN {2}
-                group by EXTRACT(MONTH from billdate)
-          ) monthlysales
-          WHERE mon in ({0})
-        GROUP BY category
-        """.format(monthStr,num_categories, _inStr, item.replace("'",""))
+    for result in results:
+        d = {'category': result[0], 'num_sold': float(result[1])}
+        l.append(d)
 
-        stmt = text(sql)
-        results = conn.execute(stmt)
+    theresult_json = json.dumps(l)
 
-        l = []
-
-        result = results.fetchone()
-
-        t = (item, 0)
-
-        if result is not None:
-            t = (item, float(result[1]))
-            mainList.append(t)
-
-        # for result in results:
-        #     d = {'category': result[0], 'num_sold': float(result[1])}
-        #     l.append(d)
-
-        conn.close()
-
-        # mainList.append(d)
-
-        #
-    return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
+    conn.close()
+    return (theresult_json)
 
 def Discontinue_Stocking(threshold, startyear, endyear):
     # return jsonify({ "n" : num_categories, "m" : months})
@@ -576,8 +431,10 @@ if __name__ == "__main__":
 
     print("Top Categories: \n")
 
-    tc = OptimizedTopCategories(3, [12])
+
+    tc = TopCategories(3, 12)
     print(tc)
+
 
     list='Education & Reference'
     category_list = list.split(",")
