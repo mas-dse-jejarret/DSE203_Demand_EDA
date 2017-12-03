@@ -524,7 +524,7 @@ def Sales_Reviews(category, month):
         return docs
 
     d3 = {'q': 'asin:(%s)' % asin_str, 'rows': '77165'}
-    d_res3 = solrWrap('bookstore_dp', d3)
+    d_res3 = solrWrap(dbname, d3)
     polarity_measure = []
     for i in range(d_res3.shape[0]):
         str1 = str(d_res3.reviewText[i])
