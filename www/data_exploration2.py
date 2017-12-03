@@ -14,8 +14,8 @@ user='student'
 password='123456'
 
 pg_connstring='postgresql+psycopg2://{0}:{1}@{2}:5432/{3}'.format(user, password, host, dbname)
-astx_host="45.79.91.219" # not open or not running in ucsd
-solr_host="45.79.91.219" # not open or not running in ucsd
+astx_host="132.249.238.32" # not open or not running in ucsd
+solr_host="132.249.238.28" # not open or not running in ucsd
 
 
 def Stats(stat_func, col_pair, table_pair, key_pair):
@@ -524,7 +524,7 @@ def Sales_Reviews(category, month):
         return docs
 
     d3 = {'q': 'asin:(%s)' % asin_str, 'rows': '77165'}
-    d_res3 = solrWrap('bookstore', d3)
+    d_res3 = solrWrap('bookstore_dp', d3)
     polarity_measure = []
     for i in range(d_res3.shape[0]):
         str1 = str(d_res3.reviewText[i])
