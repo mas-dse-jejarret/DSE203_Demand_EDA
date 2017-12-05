@@ -287,62 +287,62 @@ def OptimizedTopCategories(num_categories, months):
 
     return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
 
-def TopCategories(num_categories, months):
-    # return jsonify({ "n" : num_categories, "m" : months})
-
-    monthStr = ','.join([str(x) for x in months])
-
-    mainList = []
-
-    mainDict = {}
-
-    categories = getCategories()
-
-    for item in [x['category'] for x in categories]:
-        # print(item)
-        category = [item]
-
-        _jlist = getNodeIds(category)
-        _inStr = convertToIn(_jlist)
-        engine = create_engine(pg_connstring)
-        conn = engine.connect()
-
-        sql = """
-        SELECT '{3}' as category, sum(books_sold) AS num_sold
-        FROM
-          (     select EXTRACT(MONTH from o.billdate) as mon, count(o.orderid) as books_sold
-                from orderlines as o, products as p
-                where o.productid = p.productid AND o.totalprice > 0::money
-                AND p.nodeid IN {2}
-                group by EXTRACT(MONTH from billdate)
-          ) monthlysales
-          WHERE mon in ({0})
-        GROUP BY category
-        """.format(monthStr,num_categories, _inStr, item.replace("'",""))
-
-        stmt = text(sql)
-        results = conn.execute(stmt)
-
-        l = []
-
-        result = results.fetchone()
-
-        t = (item, 0)
-
-        if result is not None:
-            t = (item, float(result[1]))
-            mainList.append(t)
-
-        # for result in results:
-        #     d = {'category': result[0], 'num_sold': float(result[1])}
-        #     l.append(d)
-
-        conn.close()
-
-        # mainList.append(d)
-
-        #
-    return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
+# def TopCategories(num_categories, months):
+#     # return jsonify({ "n" : num_categories, "m" : months})
+#
+#     monthStr = ','.join([str(x) for x in months])
+#
+#     mainList = []
+#
+#     mainDict = {}
+#
+#     categories = getCategories()
+#
+#     for item in [x['category'] for x in categories]:
+#         # print(item)
+#         category = [item]
+#
+#         _jlist = getNodeIds(category)
+#         _inStr = convertToIn(_jlist)
+#         engine = create_engine(pg_connstring)
+#         conn = engine.connect()
+#
+#         sql = """
+#         SELECT '{3}' as category, sum(books_sold) AS num_sold
+#         FROM
+#           (     select EXTRACT(MONTH from o.billdate) as mon, count(o.orderid) as books_sold
+#                 from orderlines as o, products as p
+#                 where o.productid = p.productid AND o.totalprice > 0::money
+#                 AND p.nodeid IN {2}
+#                 group by EXTRACT(MONTH from billdate)
+#           ) monthlysales
+#           WHERE mon in ({0})
+#         GROUP BY category
+#         """.format(monthStr,num_categories, _inStr, item.replace("'",""))
+#
+#         stmt = text(sql)
+#         results = conn.execute(stmt)
+#
+#         l = []
+#
+#         result = results.fetchone()
+#
+#         t = (item, 0)
+#
+#         if result is not None:
+#             t = (item, float(result[1]))
+#             mainList.append(t)
+#
+#         # for result in results:
+#         #     d = {'category': result[0], 'num_sold': float(result[1])}
+#         #     l.append(d)
+#
+#         conn.close()
+#
+#         # mainList.append(d)
+#
+#         #
+#     return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
 
 def Discontinue_Stocking(threshold, startyear, endyear):
     # return jsonify({ "n" : num_categories, "m" : months})
@@ -375,7 +375,8 @@ def Discontinue_Stocking(threshold, startyear, endyear):
         d = {'category': result[0]}
         l.append(d)
 
-    theresult_json = json.dumps(l)
+    theresult_json = simplejson.dumps(l)
+    theresult_json = simplejson.loads(theresult_json)
 
     conn.close()
     return (theresult_json)
@@ -426,6 +427,7 @@ def Downware_Sales(season):
         l.append(d)
 
     theresult_json = simplejson.dumps(l)
+    theresult_json = simplejson.loads(theresult_json)
 
     conn.close()
     # return (results)
@@ -568,7 +570,6 @@ def Sales_Reviews(category, month):
 # pip install textblob
 
 if __name__ == "__main__":
-<<<<<<< HEAD
     app.run(host='0.0.0.0',port=80)
     print("Correlation: \n")
 
@@ -597,7 +598,7 @@ if __name__ == "__main__":
     h = Histogram(table, groupby, count)
 
     print(h)
-=======
+
 
     # print("Correlation: \n")
     #
@@ -626,7 +627,6 @@ if __name__ == "__main__":
     # h = Histogram(table, groupby, count)
     #
     # print(h)
->>>>>>> 42f1e144fa868e1b5d56b0f871147e5340c9a005
 
     print("Top Categories: \n")
 
