@@ -214,7 +214,7 @@ def OptimizedTopCategories(num_categories, months):
 
     mainDict = {}
 
-    categories = getTopCategories(25)
+    categories = getTopCategories(5)
 
     for item in [x['category'] for x in categories]:
         category = [item]
@@ -540,59 +540,59 @@ def Sales_Reviews(category, month):
 
 if __name__ == "__main__":
 
-    print("Correlation: \n")
-
-    col_pair = ('numunits','productid')
-    table_pair = ('orderlines','products')
-    key_pair = ('productid', 'productid')
-
-    retval=Correlation(col_pair, table_pair, key_pair)
-
-    print(retval)
-
-    print("Covariance: \n")
-
-
-    retval=Covariance(col_pair, table_pair, key_pair)
-
-    print(retval)
-
-    print("Histogram: \n")
-
-
-    table = "orders"
-    groupby = 'state'
-    count = 'customerid'
-
-    h = Histogram(table, groupby, count)
-
-    print(h)
+    # print("Correlation: \n")
+    #
+    # col_pair = ('numunits','productid')
+    # table_pair = ('orderlines','products')
+    # key_pair = ('productid', 'productid')
+    #
+    # retval=Correlation(col_pair, table_pair, key_pair)
+    #
+    # print(retval)
+    #
+    # print("Covariance: \n")
+    #
+    #
+    # retval=Covariance(col_pair, table_pair, key_pair)
+    #
+    # print(retval)
+    #
+    # print("Histogram: \n")
+    #
+    #
+    # table = "orders"
+    # groupby = 'state'
+    # count = 'customerid'
+    #
+    # h = Histogram(table, groupby, count)
+    #
+    # print(h)
 
     print("Top Categories: \n")
 
     tc = OptimizedTopCategories(3, [12])
     print(tc)
 
-    list='Education & Reference'
-    category_list = list.split(",")
-
-    print("Print Only Node Ids based on Category List: \n")
-
-    node_ids = getNodeIds(category_list)
-
-    print(node_ids)
-
-    print("\nHighest Monthly Sales By Category: \n")
+    # list='Education & Reference'
+    # category_list = list.split(",")
+    #
+    # print("Print Only Node Ids based on Category List: \n")
+    #
+    # node_ids = getNodeIds(category_list)
+    #
+    # print(node_ids)
+    #
+    # print("\nHighest Monthly Sales By Category: \n")
 
 
     # # hmsb = HighestMonthlySalesByCategory('Education & Reference')
-    limit = 5
-    hmsb = HighestMonthlySalesByCategory(category_list, 5)
-    print(hmsb)
-
-    print("Sentiment Polarity: \n")
-
-    sr = Sales_Reviews("Education", 3)
-    print (sr)
+    # limit = 5
+    # hmsb = HighestMonthlySalesByCategory(category_list, 5)
+    # print(hmsb)
+    #
+    # print("Sentiment Polarity: \n")
+    #
+    # sr = Sales_Reviews("Education", 3)
+    # print (sr)
 
     #machine learning group's request (anil)

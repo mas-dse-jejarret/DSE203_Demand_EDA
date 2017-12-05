@@ -20,11 +20,27 @@ def api_highest_monthly_sales_by_category(list, limit):
     # print(hmsb)
     for item in hmsb:
         print(months[item['mon'] - 1])
-
-
     # return jsonify(hmsb)
 
     return(jsonify([ {"name" : months[item['mon'] - 1], "value" : item['num_sold']} for item in hmsb]))
+
+
+@app.route("/api/top_sales_category/<ncategories>/<list>")
+def api_top_sales_category(ncategories, list):
+    month_list = [int(x) for x in list.split(",")]
+
+    print(month_list)
+    print(ncategories)
+
+    tc = OptimizedTopCategories(int(ncategories), month_list)
+
+    print(tc)
+
+    # for item in tc:
+    #     print(months[item['mon'] - 1])
+
+    return (jsonify([{"name": item[0], "value": item[1]} for item in tc]))
+
 
 @app.route("/api/correlation/<col1>/<col2>/<table1>/<table2>/<key1>/<key2>")
 def api_correlation(col1, col2, table1, table2, key1, key2):
