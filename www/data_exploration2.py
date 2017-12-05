@@ -2,7 +2,10 @@ import psycopg2
 from sqlalchemy import create_engine, text
 import json
 import pandas as pd
-from urllib import parse, request
+try:
+    from urllib import parse, request
+except:
+    from urlparse import urlparse as parse
 from json import loads
 import pysolr
 from textblob import TextBlob as tb
@@ -602,8 +605,3 @@ if __name__ == "__main__":
     print (sr)
 
     #machine learning group's request (anil)
-
-
-
-
-
