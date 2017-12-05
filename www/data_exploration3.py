@@ -14,8 +14,8 @@ user='student'
 password='123456'
 
 pg_connstring='postgresql+psycopg2://{0}:{1}@{2}:5432/{3}'.format(user, password, host, dbname)
-astx_host="45.79.91.219" # not open or not running in ucsd
-solr_host="45.79.91.219" # not open or not running in ucsd
+astx_host="132.249.238.32" # not open or not running in ucsd
+solr_host="132.249.238.28" # not open or not running in ucsd
 
 
 def Stats(stat_func, col_pair, table_pair, key_pair):
@@ -56,6 +56,8 @@ def Histogram(table, groupby, count):
     Order by count(%s) DESC
     """ % (groupby, count, table, groupby, count)
 
+    # print(sql)
+
     stmt = text(sql)
 
     results = conn.execute(stmt)
@@ -71,6 +73,74 @@ def Histogram(table, groupby, count):
     conn.close()
 
     return theresult_json
+
+def getTopCategories(limit):
+    list = ['Education & Reference',
+             'Geography & Cultures',
+             'Programming',
+             'Science, Nature & How It Works',
+             'Graphics & Design',
+             'Animals',
+             'Early Learning',
+             'Engineering',
+             'Home Improvement & Design',
+             'Growing Up & Facts of Life',
+             'History',
+             'Architecture',
+             'Regional & International',
+             'Programming Languages',
+             'Cars, Trains & Things That Go',
+             "Women's Health",
+             'Digital Audio, Video & Photography',
+             'Software',
+             'Transportation',
+             'Automotive',
+             'Hardware & DIY',
+             'Music',
+             'Pregnancy & Childbirth',
+             'Photography & Video',
+             'Military',
+             'Crafts & Hobbies',
+             'Christian Books & Bibles',
+             'Comics & Graphic Novels',
+             'Games & Strategy Guides',
+             'Biographies',
+             'Asian Cooking',
+             'Needlecrafts & Textile Crafts',
+             'Aging',
+             'Investing',
+             'Activities, Crafts & Games',
+             'Fairy Tales, Folk Tales & Myths',
+             'Physics',
+             'Gardening & Landscape Design',
+             'Web Development & Design',
+             'Literature & Fiction',
+             'Nature & Ecology',
+             'Mental Health',
+             'Religions',
+             'Puzzles & Games',
+             'Diseases & Physical Ailments',
+             'Europe',
+             "Children's & Teens",
+             'Industries',
+             'Africa',
+             'Management & Leadership']
+    return [{'category': l} for l in list[:limit]]
+
+def getCategories():
+    sql="""
+    use bookstore_dp;
+
+    select user.category.nested.nested.level_2 as category
+    from ClassificationInfo user
+    group by category;
+    """
+
+
+    ads = AsterixDataSource(host=astx_host)
+    jsonobj = ads.execute(sql)
+
+    return (jsonobj)
 
 def getNodeIds(category_list):
 
@@ -91,20 +161,16 @@ def getNodeIds(category_list):
 
     return jsonobj
 
+def convertToIn(_jlist):
+    m = ','.join(["'{0}'".format(str(x["nodeID"])) for x in _jlist])
+    return '({0})'.format(m)
+
 def HighestMonthlySalesByCategory(category_list, limit):
-
-    def convertToIn(_jlist):
-        m = ','.join(["'{0}'".format(str(x["nodeID"])) for x in _jlist])
-        return '({0})'.format(m)
-
     engine = create_engine(pg_connstring)
 
     conn = engine.connect()
 
     _jlist = getNodeIds(category_list)
-
-    # print(_jlist)
-
     _inStr = convertToIn(_jlist)
 
     #
@@ -135,48 +201,122 @@ def HighestMonthlySalesByCategory(category_list, limit):
         d = {'mon': int(result[0]), 'num_sold' : int(result[1])}
         l.append(d)
 
-    theresult_json = json.dumps(l)
+    # theresult_json = json.dumps(l)
 
     conn.close()
 
-    return (theresult_json)
+    return (l)
+
+def OptimizedTopCategories(num_categories, months):
+    monthStr = ','.join([str(x) for x in months])
+
+    mainList = []
+
+    mainDict = {}
+
+    categories = getTopCategories(5)
+
+    for item in [x['category'] for x in categories]:
+        category = [item]
+
+        _jlist = getNodeIds(category)
+        _inStr = convertToIn(_jlist)
+        engine = create_engine(pg_connstring)
+        conn = engine.connect()
+
+        sql = """
+        SELECT '{3}' as category, sum(books_sold) AS num_sold
+        FROM
+          (     select EXTRACT(MONTH from o.billdate) as mon, count(o.orderid) as books_sold
+                from orderlines as o, products as p
+                where o.productid = p.productid AND o.totalprice > 0::money
+                AND p.nodeid IN {2}
+                group by EXTRACT(MONTH from billdate)
+          ) monthlysales
+          WHERE mon in ({0})
+        GROUP BY category
+        """.format(monthStr,num_categories, _inStr, item.replace("'",""))
+
+        stmt = text(sql)
+        results = conn.execute(stmt)
+
+        l = []
+
+        result = results.fetchone()
+
+        t = (item, 0)
+
+        if result is not None:
+            t = (item, float(result[1]))
+            mainList.append(t)
+
+        # for result in results:
+        #     d = {'category': result[0], 'num_sold': float(result[1])}
+        #     l.append(d)
+
+        conn.close()
+
+        # mainList.append(d)
+
+        #
+    return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
 
 def TopCategories(num_categories, months):
     # return jsonify({ "n" : num_categories, "m" : months})
 
-    engine = create_engine(pg_connstring)
-    conn = engine.connect()
+    monthStr = ','.join([str(x) for x in months])
 
+    mainList = []
 
-    sql = """
-    SELECT category, sum(books_sold) AS num_sold
-    FROM
-      (     select EXTRACT(MONTH from o.billdate) as mon, p.nodeid as category, count(o.orderid) as books_sold
-            from orderlines as o, products as p
-            where o.productid = p.productid AND o.totalprice > 0::money
-            group by p.nodeid, EXTRACT(MONTH from billdate)
-            order by p.nodeid
-      ) monthlysales
-      WHERE mon in ({0})
-    GROUP BY category
-    ORDER BY num_sold DESC
-    LIMIT ({1})
-    """.format(months,num_categories)
+    mainDict = {}
 
-    stmt = text(sql)
+    categories = getCategories()
 
-    results = conn.execute(stmt)
+    for item in [x['category'] for x in categories]:
+        print(item)
+        category = [item]
 
-    l = []
+        _jlist = getNodeIds(category)
+        _inStr = convertToIn(_jlist)
+        engine = create_engine(pg_connstring)
+        conn = engine.connect()
 
-    for result in results:
-        d = {'category': result[0], 'num_sold': float(result[1])}
-        l.append(d)
+        sql = """
+        SELECT '{3}' as category, sum(books_sold) AS num_sold
+        FROM
+          (     select EXTRACT(MONTH from o.billdate) as mon, count(o.orderid) as books_sold
+                from orderlines as o, products as p
+                where o.productid = p.productid AND o.totalprice > 0::money
+                AND p.nodeid IN {2}
+                group by EXTRACT(MONTH from billdate)
+          ) monthlysales
+          WHERE mon in ({0})
+        GROUP BY category
+        """.format(monthStr,num_categories, _inStr, item.replace("'",""))
 
-    theresult_json = json.dumps(l)
+        stmt = text(sql)
+        results = conn.execute(stmt)
 
-    conn.close()
-    return (theresult_json)
+        l = []
+
+        result = results.fetchone()
+
+        t = (item, 0)
+
+        if result is not None:
+            t = (item, float(result[1]))
+            mainList.append(t)
+
+        # for result in results:
+        #     d = {'category': result[0], 'num_sold': float(result[1])}
+        #     l.append(d)
+
+        conn.close()
+
+        # mainList.append(d)
+
+        #
+    return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
 
 def Discontinue_Stocking(threshold, startyear, endyear):
     # return jsonify({ "n" : num_categories, "m" : months})
@@ -284,7 +424,6 @@ class AsterixDataSource():
         else:
             return json.dumps("[]")
 
-
 def Sales_Reviews(category, month):
     # AsterixDBConnection
     class QueryResponse:
@@ -379,7 +518,7 @@ def Sales_Reviews(category, month):
         return docs
 
     d3 = {'q': 'asin:(%s)' % asin_str, 'rows': '77165'}
-    d_res3 = solrWrap('bookstore', d3)
+    d_res3 = solrWrap(dbname, d3)
     polarity_measure = []
     for i in range(d_res3.shape[0]):
         str1 = str(d_res3.reviewText[i])
@@ -401,66 +540,59 @@ def Sales_Reviews(category, month):
 
 if __name__ == "__main__":
 
-    print("Correlation: \n")
-
-    col_pair = ('numunits','productid')
-    table_pair = ('orderlines','products')
-    key_pair = ('productid', 'productid')
-
-    retval=Correlation(col_pair, table_pair, key_pair)
-
-    print(retval)
-
-    print("Covariance: \n")
-
-
-    retval=Covariance(col_pair, table_pair, key_pair)
-
-    print(retval)
-
-    print("Histogram: \n")
-
-
-    table = "orders"
-    groupby = 'state'
-    count = 'customerid'
-
-    h = Histogram(table, groupby, count)
-
-    print(h)
+    # print("Correlation: \n")
+    #
+    # col_pair = ('numunits','productid')
+    # table_pair = ('orderlines','products')
+    # key_pair = ('productid', 'productid')
+    #
+    # retval=Correlation(col_pair, table_pair, key_pair)
+    #
+    # print(retval)
+    #
+    # print("Covariance: \n")
+    #
+    #
+    # retval=Covariance(col_pair, table_pair, key_pair)
+    #
+    # print(retval)
+    #
+    # print("Histogram: \n")
+    #
+    #
+    # table = "orders"
+    # groupby = 'state'
+    # count = 'customerid'
+    #
+    # h = Histogram(table, groupby, count)
+    #
+    # print(h)
 
     print("Top Categories: \n")
 
-
-    tc = TopCategories(3, 12)
+    tc = OptimizedTopCategories(3, [12])
     print(tc)
 
-
-    list='Education & Reference'
-    category_list = list.split(",")
-
-    print("Print Only Node Ids based on Category List: \n")
-
-    node_ids = getNodeIds(category_list)
-
-    print(node_ids)
-
-    print("\nHighest Monthly Sales By Category: \n")
+    # list='Education & Reference'
+    # category_list = list.split(",")
+    #
+    # print("Print Only Node Ids based on Category List: \n")
+    #
+    # node_ids = getNodeIds(category_list)
+    #
+    # print(node_ids)
+    #
+    # print("\nHighest Monthly Sales By Category: \n")
 
 
     # # hmsb = HighestMonthlySalesByCategory('Education & Reference')
-    limit = 5
-    hmsb = HighestMonthlySalesByCategory(category_list, 5)
-    print(hmsb)
-
-    print("Sentiment Polarity: \n")
-
-    sr = Sales_Reviews("Education", 3)
-    print (sr)
+    # limit = 5
+    # hmsb = HighestMonthlySalesByCategory(category_list, 5)
+    # print(hmsb)
+    #
+    # print("Sentiment Polarity: \n")
+    #
+    # sr = Sales_Reviews("Education", 3)
+    # print (sr)
 
     #machine learning group's request (anil)
-
-
-
-
-
