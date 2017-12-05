@@ -74,7 +74,6 @@ def Histogram(table, groupby, count):
 
     return theresult_json
 
-
 def getTopCategories(limit):
     list = ['Education & Reference',
              'Geography & Cultures',
@@ -128,7 +127,6 @@ def getTopCategories(limit):
              'Management & Leadership']
     return [{'category': l} for l in list[:limit]]
 
-
 def getCategories():
     sql="""
     use bookstore_dp;
@@ -143,7 +141,6 @@ def getCategories():
     jsonobj = ads.execute(sql)
 
     return (jsonobj)
-
 
 def getNodeIds(category_list):
 
@@ -163,7 +160,6 @@ def getNodeIds(category_list):
     jsonobj = ads.execute(sql)
 
     return jsonobj
-
 
 def convertToIn(_jlist):
     m = ','.join(["'{0}'".format(str(x["nodeID"])) for x in _jlist])
@@ -205,11 +201,11 @@ def HighestMonthlySalesByCategory(category_list, limit):
         d = {'mon': int(result[0]), 'num_sold' : int(result[1])}
         l.append(d)
 
-    theresult_json = json.dumps(l)
+    # theresult_json = json.dumps(l)
 
     conn.close()
 
-    return (theresult_json)
+    return (l)
 
 def OptimizedTopCategories(num_categories, months):
     monthStr = ','.join([str(x) for x in months])
@@ -264,7 +260,6 @@ def OptimizedTopCategories(num_categories, months):
 
         #
     return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
-
 
 def TopCategories(num_categories, months):
     # return jsonify({ "n" : num_categories, "m" : months})
@@ -428,7 +423,6 @@ class AsterixDataSource():
             return jsonobj['results']
         else:
             return json.dumps("[]")
-
 
 def Sales_Reviews(category, month):
     # AsterixDBConnection
@@ -602,8 +596,3 @@ if __name__ == "__main__":
     print (sr)
 
     #machine learning group's request (anil)
-
-
-
-
-

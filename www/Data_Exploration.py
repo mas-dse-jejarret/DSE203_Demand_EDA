@@ -265,8 +265,6 @@ def Top_categories(num_categories, months):
     engine = create_engine('postgresql+psycopg2://student:123456@132.249.238.27:5432/bookstore_dp')
     conn = engine.connect()
 
-
-
     sql = """
     SELECT category, sum(books_sold) AS num_sold
     FROM
