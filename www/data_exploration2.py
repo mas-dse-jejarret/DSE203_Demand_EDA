@@ -6,7 +6,10 @@ try:
     from urllib import parse, request
 except:
     from urlparse import urlparse as parse
+import urllib
+import urllib2
 from json import loads
+import simplejson
 import pysolr
 from textblob import TextBlob as tb
 import requests
@@ -36,6 +39,25 @@ def Stats(stat_func, col_pair, table_pair, key_pair):
 
     conn.close()
     return result.fetchone()[0] #str(result)
+
+
+def Simpleagg(agg_func_pair, col_pair, table_pair, key_pair):
+    engine = create_engine(pg_connstring)
+    conn = engine.connect()
+
+    sql = """
+    select %s(a.%s::int), %s(b.%s::int)
+    from %s a, %s b
+    where a.%s = b.%s
+    group by %s
+    """ %(agg_func_pair[0], col_pair[0], agg_func_pair[1], col_pair[1], table_pair[0],
+        table_pair[1], key_pair[0], key_pair[1], col_pair[0])
+
+    stmt = text(sql)
+    result = conn.execute(stmt)
+
+    conn.close()
+    return result.fetchall()
 
 def Correlation(col_pair, table_pair, key_pair):
     stat = Stats("corr", col_pair, table_pair, key_pair)
@@ -262,6 +284,7 @@ def OptimizedTopCategories(num_categories, months):
         # mainList.append(d)
 
         #
+
     return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
 
 def TopCategories(num_categories, months):
@@ -276,7 +299,7 @@ def TopCategories(num_categories, months):
     categories = getCategories()
 
     for item in [x['category'] for x in categories]:
-        print(item)
+        # print(item)
         category = [item]
 
         _jlist = getNodeIds(category)
@@ -402,7 +425,7 @@ def Downware_Sales(season):
         d = {'category': result[0],'SaleTrend': result[1]}
         l.append(d)
 
-    theresult_json = json.dumps(l)
+    theresult_json = simplejson.dumps(l)
 
     conn.close()
     # return (results)
@@ -460,13 +483,16 @@ def Sales_Reviews(category, month):
 
             if client_context_id:
                 payload['client_context_id'] = client_context_id
-
-            data = parse.urlencode(payload).encode("utf-8")
-            req = request.Request(url, data)
-
+            try:
+                data = parse.urlencode(payload).encode("utf-8")
+                req = request.Request(url, data)
+                response = request.urlopen(req).read()
+            except:
+                data = urllib.urlencode(payload)
+                data = data.encode("utf-8")
+                req = urllib2.Request(url, data)
+                response = urllib2.urlopen(req).read()
             # print(data)
-
-            response = request.urlopen(req).read()
 
             return QueryResponse(response)
 
@@ -506,7 +532,7 @@ def Sales_Reviews(category, month):
     df3 = df2.groupby(['billdate', 'productid', 'asin', 'nodeid'], as_index=False)['numunits'].sum()
     my_asin = df3['asin']
     my_asin = set(my_asin)
-    asin_str = ', '.join(my_asin)
+    asin = ', '.join(my_asin)
 
     def solrWrap(core, params):
         query_string = 'http://{0}:8983/solr/{1}/select?'.format(solr_host, core)  # connecting to our linode server
@@ -520,7 +546,7 @@ def Sales_Reviews(category, month):
         docs = pd.DataFrame(results.docs)
         return docs
 
-    d3 = {'q': 'asin:(%s)' % asin_str, 'rows': '77165'}
+    d3 = {'q': 'asin:(%s)' % asin, 'rows': '77165'}
     d_res3 = solrWrap(dbname, d3)
     polarity_measure = []
     for i in range(d_res3.shape[0]):
@@ -530,7 +556,7 @@ def Sales_Reviews(category, month):
 
     se = pd.Series(polarity_measure)
     d_res3['Sentiment_polarity'] = se.values
-    d_res3['asin'] = d_res3['asin_str'].apply(lambda x: '' + str(x)[2:-2] + '')
+    d_res3['asin'] = d_res3['asin'].apply(lambda x: '' + str(x)[2:-2] + '')
     df_sentiment = d_res3.groupby(['asin'], as_index=False)['Sentiment_polarity'].mean()
     result = pd.merge(df3, df_sentiment, on='asin', how='inner')
     final_result = result.reset_index().to_json(orient='records')
@@ -542,6 +568,36 @@ def Sales_Reviews(category, month):
 # pip install textblob
 
 if __name__ == "__main__":
+<<<<<<< HEAD
+    app.run(host='0.0.0.0',port=80)
+    print("Correlation: \n")
+
+    col_pair = ('numunits','productid')
+    table_pair = ('orderlines','products')
+    key_pair = ('productid', 'productid')
+
+    retval=Correlation(col_pair, table_pair, key_pair)
+
+    print(retval)
+
+    print("Covariance: \n")
+
+
+    retval=Covariance(col_pair, table_pair, key_pair)
+
+    print(retval)
+
+    print("Histogram: \n")
+
+
+    table = "orders"
+    groupby = 'state'
+    count = 'customerid'
+
+    h = Histogram(table, groupby, count)
+
+    print(h)
+=======
 
     # print("Correlation: \n")
     #
@@ -570,6 +626,7 @@ if __name__ == "__main__":
     # h = Histogram(table, groupby, count)
     #
     # print(h)
+>>>>>>> 42f1e144fa868e1b5d56b0f871147e5340c9a005
 
     print("Top Categories: \n")
 
