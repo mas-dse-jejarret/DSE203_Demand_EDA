@@ -8,7 +8,7 @@ except:
     from urlparse import urlparse as parse
 import urllib
 import urllib2
-from json import loads
+from json import loads,dumps
 import simplejson
 import pysolr
 from textblob import TextBlob as tb
@@ -93,7 +93,8 @@ def Histogram(table, groupby, count):
         d = {'Group': result[0], 'Count': result[1]}
         l.append(d)
 
-    theresult_json = json.dumps(l)
+    theresult_json = simplejson.dumps(l, ensure_ascii=False)
+    theresult_json = simplejson.loads(theresult_json)
 
     conn.close()
 
@@ -381,7 +382,7 @@ def Discontinue_Stocking(threshold, startyear, endyear):
     conn.close()
     return (theresult_json)
 
-def Downware_Sales(season):
+def Downward_Sales(season):
     # return jsonify({ "n" : num_categories, "m" : months})
     seasons = {'spring':(3,4,5),
                 'summer':(6,7,8),
