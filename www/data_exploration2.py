@@ -566,6 +566,22 @@ def Sales_Reviews(category, month):
 
     return final_result
 
+def GetTextAttributes(nodeIds=[1]):
+    _where = ' OR '.join(['user.nodeID = {0}'.format(x) for x in nodeIds])
+
+    sql = """
+    use bookstore_dp;
+
+    select user.nodeID, user.classification, user.category.nested.nested.level_2
+    from ClassificationInfo user
+    where {0};
+    """.format(_where)
+
+    ads = AsterixDataSource(host=astx_host)
+    jsonobj = ads.execute(sql)
+
+    return jsonobj
+
 # pip install psycopg2
 # pip install pysolr
 # pip install textblob

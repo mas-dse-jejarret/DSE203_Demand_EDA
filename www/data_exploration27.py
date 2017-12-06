@@ -318,7 +318,3 @@ if __name__ == "__main__":
     # pass list of node_ids
     json_result = GetTextAttributes([1,173508,266162])
     print(json_result)
-
-
-
-
