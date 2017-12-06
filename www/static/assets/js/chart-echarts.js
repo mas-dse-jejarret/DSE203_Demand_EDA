@@ -149,7 +149,7 @@ jQuery(function($) {
             cache: false,
             type: "GET",
             url: '/api/highest_monthly_sales_by_category/' + value1 + '/' + value2,
-            async: false,
+            async: true,
             success : function(data) {
                 console.log(data);
                 option_dt.options[0].series.name = value1;
@@ -288,7 +288,7 @@ jQuery(function($) {
             cache: false,
             type: "GET",
             url: '/api/top_sales_category/' + value1 + '/' + value2,
-            async: false,
+            async: true,
             success : function(data) {
                 console.log(data);
                 option_dt.options[0].series.name = value1;
