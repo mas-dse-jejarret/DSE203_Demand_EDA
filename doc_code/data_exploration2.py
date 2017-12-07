@@ -26,11 +26,12 @@ solr_host="132.249.238.28" # not open or not running in ucsd
 
 def Stats(stat_func, col_pair, table_pair, key_pair):
     """
-
+    Stats function inputs SQL statistical functions (CORR, COV, etc.), columns/tables of interest, and required
+     keys to join tables, and returns a statistical value.
     :param stat_func: str, SQL statistical function call (CORR, COV, etc.)
     :param col_pair: list or tuple of length 2. Contains two column names to calculate statistical function on
     :param table_pair: list or tuple of length 2. Contains two table names which columns located in
-    :param key_pair: list or tuple of length 2. Contains primary/foreign keys from table_pair
+    :param key_pair: list or tuple of length 2. Values should be strings. Contains primary/foreign keys from table_pair
     :return: float Output of the statistical function
 
     """
@@ -51,6 +52,15 @@ def Stats(stat_func, col_pair, table_pair, key_pair):
 
 
 def Simpleagg(agg_func_pair, col_pair, table_pair, key_pair):
+    """
+    Simpleagg allow you to input aggregation functions and columns and returns aggregated data from those columns
+    :param agg_func_pair: list or tuple of length 2. Inputs should strings. Strings must be names of SQL aggregate
+        functions (count, max, sum, etc)
+    :param col_pair: list or tuple of length 2. Values should be strings. Two column names to calculate statistical function on
+    :param table_pair: list or tuple of length 2. Values should be strings.Table names which columns located in.
+    :param key_pair: list or tuple of length 2. Values should be strings. Contains primary/foreign keys from table_pair
+    :return: list of tuples, containing aggregations
+    """
     engine = create_engine(pg_connstring)
     conn = engine.connect()
 
@@ -69,17 +79,43 @@ def Simpleagg(agg_func_pair, col_pair, table_pair, key_pair):
     return result.fetchall()
 
 def Correlation(col_pair, table_pair, key_pair):
+    """
+    Correlation inputs columns/tables of interest, and required
+     keys to join tables, and returns a the correlation coefficient
+
+    :param col_pair: list or tuple of length 2. Contains two column names to calculate statistical function on
+    :param table_pair: list or tuple of length 2. Contains two table names which columns located in
+    :param key_pair: list or tuple of length 2. Values should be strings. Contains primary/foreign keys from table_pair
+    :return: float Correlation coefficient of the two variables
+
+    """
     stat = Stats("corr", col_pair, table_pair, key_pair)
     return json.dumps({"correlation" : stat})
 
 def Covariance(col_pair, table_pair, key_pair):
-    """Determine the covariance coefficient between two columns."""
+    """
+        Covariance inputs columns/tables of interest, and required
+         keys to join tables, and returns the covariance coefficient between two columns
 
+        :param col_pair: list or tuple of length 2. Contains two column names to calculate statistical function on
+        :param table_pair: list or tuple of length 2. Contains two table names which columns located in
+        :param key_pair: list or tuple of length 2. Values should be strings. Contains primary/foreign keys from table_pair
+        :return: float Covariance coefficient of the two variables
+
+    """
     stat = Stats("covar_samp", col_pair, table_pair, key_pair)
     return json.dumps({"covariance" : stat})
 
 def Histogram(table, groupby, count):
+    """
+    Histogram returns data for generating histograms in Postgres
 
+    :param table: str, table name
+    :param groupby: str, column to group by
+    :param count: str, column to be counted in the group by
+    :return: list of dictionaries, containing count and group keys
+
+    """
     engine = create_engine(pg_connstring)
     conn = engine.connect()
 
@@ -110,6 +146,13 @@ def Histogram(table, groupby, count):
     return theresult_json
 
 def getTopCategories(limit):
+    """
+    TopCategories returns top selling categories
+
+    :param limit: int, number of categories to return
+    :return: list of dictionaries of categories with category as key
+
+    """
     list = ['Education & Reference',
              'Geography & Cultures',
              'Programming',
@@ -163,6 +206,11 @@ def getTopCategories(limit):
     return [{'category': l} for l in list[:limit]]
 
 def getCategories():
+    """
+    getCategories returns dictionary of categories
+
+    :return: list of dictionaries of all categories with category as key
+    """
     sql="""
     use bookstore_dp;
 
@@ -178,6 +226,12 @@ def getCategories():
     return (jsonobj)
 
 def getNodeIds(category_list):
+    """
+    getNodeIds inputs a list of categories and returns a dictionary of category,nodeId pairs
+
+    :param category_list: list, categories to get nodeIDs for
+    :return: list of dictionaries of nodeIds as keys. Aggregated together (not separated by category)
+    """
 
     _where = ' OR '.join(['user.category.nested.nested.level_2 = "{0}"'.format(x) for x in category_list])
 
@@ -197,10 +251,25 @@ def getNodeIds(category_list):
     return jsonobj
 
 def convertToIn(_jlist):
+    """
+    Helper function for HighestMonthlySalesByCategory
+
+    :param _jlist: list, ints of nodeIDs
+    :return: list, strings of nodeIDs
+    """
+
     m = ','.join(["'{0}'".format(str(x["nodeID"])) for x in _jlist])
     return '({0})'.format(m)
 
 def HighestMonthlySalesByCategory(category_list, limit):
+    """
+    HighestMonthlySalesByCategory inputs a list of categories and limit and returns a dictionary of
+    month/num_sold pairs
+
+    :param category_list: list, list of categories
+    :param limit: int, number of results per category to return
+    :return: list of dictionaries with "month" and "num_sold" keys
+    """
     engine = create_engine(pg_connstring)
 
     conn = engine.connect()
@@ -243,6 +312,14 @@ def HighestMonthlySalesByCategory(category_list, limit):
     return (l)
 
 def OptimizedTopCategories(num_categories, months):
+    """
+    OptimizedTopCategories inputs number of categories and months of interest and returns category and
+    number of books from that category purchased in that time range
+
+    :param num_categories: int, number of categories to return
+    :param months: list, months
+    :return:  list of tuples of each category and number of books purchased in month range
+    """
     monthStr = ','.join([str(x) for x in months])
 
     mainList = []
@@ -285,77 +362,25 @@ def OptimizedTopCategories(num_categories, months):
             t = (item, float(result[1]))
             mainList.append(t)
 
-        # for result in results:
-        #     d = {'category': result[0], 'num_sold': float(result[1])}
-        #     l.append(d)
 
         conn.close()
 
-        # mainList.append(d)
 
-        #
 
     return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
 
-# def TopCategories(num_categories, months):
-#     # return jsonify({ "n" : num_categories, "m" : months})
-#
-#     monthStr = ','.join([str(x) for x in months])
-#
-#     mainList = []
-#
-#     mainDict = {}
-#
-#     categories = getCategories()
-#
-#     for item in [x['category'] for x in categories]:
-#         # print(item)
-#         category = [item]
-#
-#         _jlist = getNodeIds(category)
-#         _inStr = convertToIn(_jlist)
-#         engine = create_engine(pg_connstring)
-#         conn = engine.connect()
-#
-#         sql = """
-#         SELECT '{3}' as category, sum(books_sold) AS num_sold
-#         FROM
-#           (     select EXTRACT(MONTH from o.billdate) as mon, count(o.orderid) as books_sold
-#                 from orderlines as o, products as p
-#                 where o.productid = p.productid AND o.totalprice > 0::money
-#                 AND p.nodeid IN {2}
-#                 group by EXTRACT(MONTH from billdate)
-#           ) monthlysales
-#           WHERE mon in ({0})
-#         GROUP BY category
-#         """.format(monthStr,num_categories, _inStr, item.replace("'",""))
-#
-#         stmt = text(sql)
-#         results = conn.execute(stmt)
-#
-#         l = []
-#
-#         result = results.fetchone()
-#
-#         t = (item, 0)
-#
-#         if result is not None:
-#             t = (item, float(result[1]))
-#             mainList.append(t)
-#
-#         # for result in results:
-#         #     d = {'category': result[0], 'num_sold': float(result[1])}
-#         #     l.append(d)
-#
-#         conn.close()
-#
-#         # mainList.append(d)
-#
-#         #
-#     return (sorted(mainList, key=lambda x: x[1], reverse=True))[:num_categories]
 
 def Discontinue_Stocking(threshold, startyear, endyear):
     # return jsonify({ "n" : num_categories, "m" : months})
+    """
+    Discontinue_Stocking inputs a book sales threshold (minimum) and time frame, and returns categories whose
+        sales are below that threshold
+
+    :param threshold: int, minimum number of books needed to be sold during time period
+    :param startyear: int, start year. Function considers time after (not including) start year
+    :param endyear:  int, end year. Function considers time up to and including end year
+    :return: list of dictionaries with only "Category" key and categoryID value
+    """
 
     engine = create_engine(pg_connstring)
     conn = engine.connect()
@@ -392,6 +417,12 @@ def Discontinue_Stocking(threshold, startyear, endyear):
     return (theresult_json)
 
 def Downward_Sales(season):
+    """
+    Downward_Sales inputs a season and returns a list of dictionaries with SaleTrend and category keys
+    
+    :param season: str, season (summer, fall, winter, spring)
+    :return: list of dictionaries with "SaleTrend" and "Category" keys
+    """
     # return jsonify({ "n" : num_categories, "m" : months})
     seasons = {'spring':(3,4,5),
                 'summer':(6,7,8),
@@ -464,6 +495,7 @@ class AsterixDataSource():
 
 def Sales_Reviews(category, month):
     # AsterixDBConnection
+
     class QueryResponse:
         def __init__(self, raw_response):
             self._json = loads(raw_response)
@@ -626,59 +658,9 @@ if __name__ == "__main__":
     print(h)
 
 
-    # print("Correlation: \n")
-    #
-    # col_pair = ('numunits','productid')
-    # table_pair = ('orderlines','products')
-    # key_pair = ('productid', 'productid')
-    #
-    # retval=Correlation(col_pair, table_pair, key_pair)
-    #
-    # print(retval)
-    #
-    # print("Covariance: \n")
-    #
-    #
-    # retval=Covariance(col_pair, table_pair, key_pair)
-    #
-    # print(retval)
-    #
-    # print("Histogram: \n")
-    #
-    #
-    # table = "orders"
-    # groupby = 'state'
-    # count = 'customerid'
-    #
-    # h = Histogram(table, groupby, count)
-    #
-    # print(h)
 
     print("Top Categories: \n")
 
     tc = OptimizedTopCategories(3, [12])
     print(tc)
 
-    # list='Education & Reference'
-    # category_list = list.split(",")
-    #
-    # print("Print Only Node Ids based on Category List: \n")
-    #
-    # node_ids = getNodeIds(category_list)
-    #
-    # print(node_ids)
-    #
-    # print("\nHighest Monthly Sales By Category: \n")
-
-
-    # # hmsb = HighestMonthlySalesByCategory('Education & Reference')
-    # limit = 5
-    # hmsb = HighestMonthlySalesByCategory(category_list, 5)
-    # print(hmsb)
-    #
-    # print("Sentiment Polarity: \n")
-    #
-    # sr = Sales_Reviews("Education", 3)
-    # print (sr)
-
-    #machine learning group's request (anil)
