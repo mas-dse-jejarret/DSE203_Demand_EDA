@@ -19,6 +19,7 @@ import requests
 def printthread(val):
     print("{}, thread: {}".format(val, current_thread().name))
 
+
 def make_connection(url):
     a = datetime.datetime.now()
     response = requests.get(url)
@@ -31,7 +32,7 @@ l = []
 
 # calculate number of CPU's, then create a ThreadPoolScheduler with that number of threads
 optimal_thread_count = multiprocessing.cpu_count()
-optimal_thread_count = 50
+optimal_thread_count = 10
 pool_scheduler = ThreadPoolScheduler(optimal_thread_count)
 
 class Async(Observer):
@@ -42,7 +43,7 @@ class Async(Observer):
     def on_next(self, value):
         print("Process {0}".format(self.id))
         #t = make_connection("http://localhost/api/highest_monthly_sales_by_category/Education%20&%20Reference")
-        t = make_connection("http://localhost/api/web_method/json?c1=productid&c2=shipdate&c3=unitprice")
+        t = make_connection("http://localhost:5000/api/top_sales_category/5/5,4,3")
         pct = (t/60.0) * 100
         print("{0}:{1}".format(t, pct))
         l.append(t)
@@ -58,7 +59,7 @@ class Async(Observer):
 
 for i in range(40):
     # # Create Process 1
-    Observable.range(1, 10) \
+    Observable.range(1, 50) \
         .subscribe_on(pool_scheduler) \
         .subscribe(Async(id=i))
 
