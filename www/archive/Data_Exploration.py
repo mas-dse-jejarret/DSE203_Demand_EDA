@@ -1,16 +1,17 @@
 from __future__ import print_function, division, unicode_literals
-from flask import Flask, request, jsonify
-from middleware import WebSession
-from middleware import VirtualIntegrationSchema
-from datasources import AsterixDataSource
-from datasources import SolrDataSource
-from datasources import get_node_ids, convertToIn
-from sqlalchemy import create_engine, text
-from datetime import date, datetime
-import simplejson
-#from sentiment_polarity import Sales_Reviews
 
-import json
+from datetime import date, datetime
+
+import simplejson
+from flask import Flask, request, jsonify
+
+from www.archive.datasources import AsterixDataSource
+from www.archive.datasources import SolrDataSource
+from www.archive.datasources import convertToIn
+from www.archive.middleware import VirtualIntegrationSchema
+from www.archive.middleware import WebSession
+
+#from sentiment_polarity import Sales_Reviews
 
 
 import pandas as pd
@@ -20,7 +21,6 @@ from json import loads
 import psycopg2
 from sqlalchemy import create_engine, text
 import pysolr
-import math
 from textblob import TextBlob as tb
 
 

@@ -1,16 +1,18 @@
 from __future__ import print_function
-from flask import Flask, request, jsonify
-from middleware import WebSession
-from middleware import VirtualIntegrationSchema
-from datasources import AsterixDataSource
-from datasources import SolrDataSource
-from datasources import get_node_ids, convertToIn
-from sqlalchemy import create_engine, text
-from datetime import date, datetime
-import simplejson
-from sentiment_polarity import Sales_Reviews
 
 import json
+from datetime import date, datetime
+
+import simplejson
+from flask import Flask, request, jsonify
+from sqlalchemy import create_engine, text
+
+from www.archive.datasources import AsterixDataSource
+from www.archive.datasources import SolrDataSource
+from www.archive.datasources import convertToIn
+from www.archive.middleware import VirtualIntegrationSchema
+from www.archive.middleware import WebSession
+from www.archive.sentiment_polarity import Sales_Reviews
 
 app = Flask(__name__)
 

@@ -1,7 +1,5 @@
 # to run 
-python server.py
+python rest_api_server.py
 
 # to kill
 kill -9 $(pidof python)
-
-

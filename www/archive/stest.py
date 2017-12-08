@@ -1,12 +1,10 @@
 from flask import Flask, request, jsonify
 
-from middleware import WebSession
-from middleware import VirtualIntegrationSchema
-from datasources import AsterixDataSource
-from datasources import SolrDataSource
-from sentiment_polarity import Sales_Reviews
-
-import json
+from www.archive.datasources import AsterixDataSource
+from www.archive.datasources import SolrDataSource
+from www.archive.middleware import VirtualIntegrationSchema
+from www.archive.middleware import WebSession
+from www.archive.sentiment_polarity import Sales_Reviews
 
 app = Flask(__name__)
 
