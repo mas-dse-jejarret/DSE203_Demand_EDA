@@ -1,0 +1,351 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>data_exploration2 module &#8212; Team Demand EDA API  documentation</title>
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head>
+  <body>
+      <div class="header" role="banner"><h1 class="heading"><a href="index.html">
+          <span>Team Demand EDA API  documentation</span></a></h1>
+        <h2 class="heading"><span>data_exploration2 module</span></h2>
+      </div>
+      <div class="topnav" role="navigation" aria-label="top navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="module-data_exploration2">
+<span id="data-exploration2-module"></span><h1>data_exploration2 module<a class="headerlink" href="#module-data_exploration2" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="data_exploration2.AsterixDataSource">
+<em class="property">class </em><code class="descclassname">data_exploration2.</code><code class="descname">AsterixDataSource</code><span class="sig-paren">(</span><em>host='localhost'</em>, <em>port=19002</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#AsterixDataSource"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.AsterixDataSource" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="data_exploration2.AsterixDataSource.execute">
+<code class="descname">execute</code><span class="sig-paren">(</span><em>_sql</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#AsterixDataSource.execute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.AsterixDataSource.execute" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.Correlation">
+<code class="descclassname">data_exploration2.</code><code class="descname">Correlation</code><span class="sig-paren">(</span><em>col_pair</em>, <em>table_pair</em>, <em>key_pair</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#Correlation"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.Correlation" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Correlation inputs columns/tables of interest, and required</dt>
+<dd>keys to join tables, and returns a the correlation coefficient</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>col_pair</strong> – list or tuple of length 2. Contains two column names to calculate statistical function on</li>
+<li><strong>table_pair</strong> – list or tuple of length 2. Contains two table names which columns located in</li>
+<li><strong>key_pair</strong> – list or tuple of length 2. Values should be strings. Contains primary/foreign keys from table_pair</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">float Correlation coefficient of the two variables</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.Covariance">
+<code class="descclassname">data_exploration2.</code><code class="descname">Covariance</code><span class="sig-paren">(</span><em>col_pair</em>, <em>table_pair</em>, <em>key_pair</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#Covariance"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.Covariance" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Covariance inputs columns/tables of interest, and required</dt>
+<dd>keys to join tables, and returns the covariance coefficient between two columns</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>col_pair</strong> – list or tuple of length 2. Contains two column names to calculate statistical function on</li>
+<li><strong>table_pair</strong> – list or tuple of length 2. Contains two table names which columns located in</li>
+<li><strong>key_pair</strong> – list or tuple of length 2. Values should be strings. Contains primary/foreign keys from table_pair</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">float Covariance coefficient of the two variables</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.Discontinue_Stocking">
+<code class="descclassname">data_exploration2.</code><code class="descname">Discontinue_Stocking</code><span class="sig-paren">(</span><em>threshold</em>, <em>startyear</em>, <em>endyear</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#Discontinue_Stocking"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.Discontinue_Stocking" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Discontinue_Stocking inputs a book sales threshold (minimum) and time frame, and returns categories whose</dt>
+<dd>sales are below that threshold</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>threshold</strong> – int, minimum number of books needed to be sold during time period</li>
+<li><strong>startyear</strong> – int, start year. Function considers time after (not including) start year</li>
+<li><strong>endyear</strong> – int, end year. Function considers time up to and including end year</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of dictionaries with only “Category” key and categoryID value</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.Downward_Sales">
+<code class="descclassname">data_exploration2.</code><code class="descname">Downward_Sales</code><span class="sig-paren">(</span><em>season</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#Downward_Sales"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.Downward_Sales" title="Permalink to this definition">¶</a></dt>
+<dd><p>Downward_Sales inputs a season and returns a list of dictionaries with SaleTrend and category keys</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>season</strong> – str, season (summer, fall, winter, spring)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of dictionaries with “SaleTrend” and “Category” keys</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.GetTextAttributes">
+<code class="descclassname">data_exploration2.</code><code class="descname">GetTextAttributes</code><span class="sig-paren">(</span><em>nodeIds=[1]</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#GetTextAttributes"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.GetTextAttributes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.HighestMonthlySalesByCategory">
+<code class="descclassname">data_exploration2.</code><code class="descname">HighestMonthlySalesByCategory</code><span class="sig-paren">(</span><em>category_list</em>, <em>limit</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#HighestMonthlySalesByCategory"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.HighestMonthlySalesByCategory" title="Permalink to this definition">¶</a></dt>
+<dd><p>HighestMonthlySalesByCategory inputs a list of categories and limit and returns a dictionary of
+month/num_sold pairs</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>category_list</strong> – list, list of categories</li>
+<li><strong>limit</strong> – int, number of results per category to return</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of dictionaries with “month” and “num_sold” keys</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.Histogram">
+<code class="descclassname">data_exploration2.</code><code class="descname">Histogram</code><span class="sig-paren">(</span><em>table</em>, <em>groupby</em>, <em>count</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#Histogram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.Histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Histogram returns data for generating histograms in Postgres</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>table</strong> – str, table name</li>
+<li><strong>groupby</strong> – str, column to group by</li>
+<li><strong>count</strong> – str, column to be counted in the group by</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of dictionaries, containing count and group keys</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.OptimizedTopCategories">
+<code class="descclassname">data_exploration2.</code><code class="descname">OptimizedTopCategories</code><span class="sig-paren">(</span><em>num_categories</em>, <em>months</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#OptimizedTopCategories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.OptimizedTopCategories" title="Permalink to this definition">¶</a></dt>
+<dd><p>OptimizedTopCategories inputs number of categories and months of interest and returns category and
+number of books from that category purchased in that time range</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>num_categories</strong> – int, number of categories to return</li>
+<li><strong>months</strong> – list, months</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of tuples of each category and number of books purchased in month range</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.Sales_Reviews">
+<code class="descclassname">data_exploration2.</code><code class="descname">Sales_Reviews</code><span class="sig-paren">(</span><em>category</em>, <em>month</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#Sales_Reviews"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.Sales_Reviews" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.Simpleagg">
+<code class="descclassname">data_exploration2.</code><code class="descname">Simpleagg</code><span class="sig-paren">(</span><em>agg_func_pair</em>, <em>col_pair</em>, <em>table_pair</em>, <em>key_pair</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#Simpleagg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.Simpleagg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simpleagg allow you to input aggregation functions and columns and returns aggregated data from those columns
+:param agg_func_pair: list or tuple of length 2. Inputs should strings. Strings must be names of SQL aggregate</p>
+<blockquote>
+<div>functions (count, max, sum, etc)</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>col_pair</strong> – list or tuple of length 2. Values should be strings. Two column names to calculate statistical function on</li>
+<li><strong>table_pair</strong> – list or tuple of length 2. Values should be strings.Table names which columns located in.</li>
+<li><strong>key_pair</strong> – list or tuple of length 2. Values should be strings. Contains primary/foreign keys from table_pair</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">list of tuples, containing aggregations</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.Stats">
+<code class="descclassname">data_exploration2.</code><code class="descname">Stats</code><span class="sig-paren">(</span><em>stat_func</em>, <em>col_pair</em>, <em>table_pair</em>, <em>key_pair</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#Stats"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.Stats" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Stats function inputs SQL statistical functions (CORR, COV, etc.), columns/tables of interest, and required</dt>
+<dd>keys to join tables, and returns a statistical value.</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>stat_func</strong> – str, SQL statistical function call (CORR, COV, etc.)</li>
+<li><strong>col_pair</strong> – list or tuple of length 2. Contains two column names to calculate statistical function on</li>
+<li><strong>table_pair</strong> – list or tuple of length 2. Contains two table names which columns located in</li>
+<li><strong>key_pair</strong> – list or tuple of length 2. Values should be strings. Contains primary/foreign keys from table_pair</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">float Output of the statistical function</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.convertToIn">
+<code class="descclassname">data_exploration2.</code><code class="descname">convertToIn</code><span class="sig-paren">(</span><em>_jlist</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#convertToIn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.convertToIn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Helper function for HighestMonthlySalesByCategory</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>_jlist</strong> – list, ints of nodeIDs</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list, strings of nodeIDs</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.getCategories">
+<code class="descclassname">data_exploration2.</code><code class="descname">getCategories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#getCategories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.getCategories" title="Permalink to this definition">¶</a></dt>
+<dd><p>getCategories returns dictionary of categories</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">list of dictionaries of all categories with category as key</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.getNodeIds">
+<code class="descclassname">data_exploration2.</code><code class="descname">getNodeIds</code><span class="sig-paren">(</span><em>category_list</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#getNodeIds"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.getNodeIds" title="Permalink to this definition">¶</a></dt>
+<dd><p>getNodeIds inputs a list of categories and returns a dictionary of category,nodeId pairs</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>category_list</strong> – list, categories to get nodeIDs for</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of dictionaries of nodeIds as keys. Aggregated together (not separated by category)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="data_exploration2.getTopCategories">
+<code class="descclassname">data_exploration2.</code><code class="descname">getTopCategories</code><span class="sig-paren">(</span><em>limit</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/data_exploration2.html#getTopCategories"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#data_exploration2.getTopCategories" title="Permalink to this definition">¶</a></dt>
+<dd><p>TopCategories returns top selling categories</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>limit</strong> – int, number of categories to return</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">list of dictionaries of categories with category as key</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+      </div>
+      <div class="bottomnav" role="navigation" aria-label="bottom navigation">
+      
+        <p>
+        <a class="uplink" href="index.html">Contents</a>
+        </p>
+
+      </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Team Demand EDA.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.3.
+    </div>
+  </body>
+</html>
