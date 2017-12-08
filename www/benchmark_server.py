@@ -51,7 +51,7 @@ def save_api_value(api_id, value):
     stack = get_stack()
     cache.set(api_id, value, timeout=60*5)
 
-    if len(stack) > 100:
+    if len(stack) > 15:
         stack.pop(0)
 
     stack.append(float(value));
