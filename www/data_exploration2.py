@@ -570,7 +570,9 @@ def Sales_Reviews(category, month):
     d_res3['Sentiment_polarity'] = se.values
     d_res3['asin'] = d_res3['asin'].apply(lambda x: '' + str(x)[3:-2] + '')
     df_sentiment = d_res3.groupby(['asin'], as_index=False)['Sentiment_polarity'].mean()
+
     result = pd.merge(df3, df_sentiment, on='asin', how='inner')
+    result = result.groupby(['nodeid'], as_index=False)['Sentiment_polarity'].mean()
     final_result = result.reset_index().to_json(orient='records')
 
     return final_result

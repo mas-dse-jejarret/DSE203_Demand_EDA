@@ -41,7 +41,6 @@ def api_top_sales_category(ncategories, list):
 
     return (jsonify([{"name": item[0], "value": item[1]} for item in tc]))
 
-
 @app.route("/api/correlation/<col1>/<col2>/<table1>/<table2>/<key1>/<key2>")
 def api_correlation(col1, col2, table1, table2, key1, key2):
     col_pair = (col1,col2)
@@ -59,4 +58,4 @@ def sentiment_polarity(category, month):
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=81)
+    app.run(host='0.0.0.0',port=5000)
