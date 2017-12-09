@@ -24,4 +24,8 @@ We have following 3 HTML files that can be ran on localhost browser. Make sure '
 - http://localhost:5000/static/level1/SalesByCategory.html	: Break-down of Sales by month for given Category.
 - http://localhost:5000/static/level1/SentimentPolarity.html : Sentiment Polarity for Solr Review Text.
 
+## Tableau Visualization
+We have also performed some visualization on Tableau based on the data pulled from Mediated Schema.
+https://public.tableau.com/profile/orysya.stus#!/vizhome/EDA_DemandPrediction/Demand 
+
 Please follow our presentation slides and demo which are in respective folders for more information.
